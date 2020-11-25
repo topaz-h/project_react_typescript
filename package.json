@@ -1,0 +1,50 @@
+{
+  "name": "project_react_typescript",
+  "version": "1.0.0",
+  "description": "react+ts",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve",
+    "build": "webpack",
+    "lint": "eslint src --ext .tsx",
+    "lint:fix": "eslint src --ext .tsx --fix",
+    "jest": "jest",
+    "changelogs": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/topaz-h/project_react_typescript.git"
+  },
+  "keywords": [
+    "typescript",
+    "react"
+  ],
+  "author": "topaz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/topaz-h/project_react_typescript/issues"
+  },
+  "homepage": "https://github.com/topaz-h/project_react_typescript#readme",
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "commitizen": "^4.2.2",
+    "conventional-changelog-cli": "^2.1.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^4.3.0",
+    "validate-commit-msg": "^2.14.0"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "validate-commit-msg"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
