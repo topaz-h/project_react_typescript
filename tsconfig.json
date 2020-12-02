@@ -1,4 +1,5 @@
 {
+  // [webpack.config.ts支持语言ts](https://www.webpackjs.com/configuration/configuration-languages/#typescript)
   "compilerOptions": {
     /* Basic Options */
     // "incremental": true,                   /* Enable incremental compilation */

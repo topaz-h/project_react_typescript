@@ -1,0 +1,2057 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0064)http://www.zhufengpeixun.com/grow/html/114.react+typescript.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>珠峰架构师成长计划</title>
+    <link rel="stylesheet" type="text/css" href="./珠峰架构师成长计划_files/main.css">
+   
+</head>
+<body>
+
+
+
+<div class="warpper">
+
+    <div class="page-toc">
+        <ul><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t01.%20TypeScript%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%BC%80%E5%8F%91">1. TypeScript工程化开发</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t12.%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE">2.初始化项目</a><ul><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t23.%20git%E8%A7%84%E8%8C%83%E5%92%8Cchangelog">3. git规范和changelog</a><ul><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t33.1%20%20%E8%89%AF%E5%A5%BD%E7%9A%84git%20commit%E5%A5%BD%E5%A4%84">3.1  良好的git commit好处</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t43.2%20%20%E8%89%AF%E5%A5%BD%E7%9A%84commit">3.2  良好的commit</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t53.3%20.gitignore">3.3 .gitignore</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t63.4%20%E6%8F%90%E4%BA%A4%E7%9A%84%E6%A0%BC%E5%BC%8F">3.4 提交的格式</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t73.4%20husky">3.4 husky</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t83.5%20%E7%94%9F%E6%88%90CHANGELOG.md">3.5 生成CHANGELOG.md</a></li></ul></li></ul></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t94.%20%E6%94%AF%E6%8C%81Typescript">4. 支持Typescript</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t105.%20%E6%94%AF%E6%8C%81React">5. 支持React</a><ul><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t115.1%20%E5%AE%89%E8%A3%85">5.1 安装</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t125.2%20tsconfig.json">5.2 tsconfig.json</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t135.3%20webpack.config.js">5.3 webpack.config.js</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t145.3%20src\index.tsx">5.3 src\index.tsx</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t155.4%20src\index.html">5.4 src\index.html</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t165.5%20package.json">5.5 package.json</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t176.%20%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83">6. 代码规范</a><ul><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t186.1%20%E5%B8%B8%E8%A7%81%E7%9A%84%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83%E6%96%87%E6%A1%A3">6.1 常见的代码规范文档</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t196.2%20%E4%BB%A3%E7%A0%81%E6%A3%80%E6%9F%A5">6.2 代码检查</a><ul><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t206.2.1%20%E6%A8%A1%E5%9D%97%E5%AE%89%E8%A3%85">6.2.1 模块安装</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t216.2.2%20eslintrc%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">6.2.2 eslintrc配置文件</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t226.2.3%20%E4%BB%A3%E7%A0%81%E6%A3%80%E6%9F%A5">6.2.3 代码检查</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t236.2.4%20%E9%85%8D%E7%BD%AE%E8%87%AA%E5%8A%A8%E4%BF%AE%E5%A4%8D">6.2.4 配置自动修复</a></li></ul></li></ul></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t247.%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95">7.单元测试</a><ul><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t257.1%20%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE">7.1 安装配置</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t267.2%20src\sum.tsx">7.2 src\sum.tsx</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t277.3%20tests\sum.spec.tsx">7.3 tests\sum.spec.tsx</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t287.4%20package.json">7.4 package.json</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t298.%20%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90">8. 持续集成</a><ul><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t308.1%20%E7%99%BB%E5%BD%95%E5%B9%B6%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE">8.1 登录并创建项目</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t318.2%20.travis.yml">8.2 .travis.yml</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t328.3%20%E5%AE%9E%E6%88%98">8.3 实战</a><ul><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t338.3.1%20%E7%94%9F%E6%88%90%E9%A1%B9%E7%9B%AE%E5%B9%B6%E4%B8%8A%E4%BC%A0github">8.3.1 生成项目并上传github</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t348.3.2%20%E5%90%8C%E6%AD%A5%E4%BB%93%E5%BA%93">8.3.2 同步仓库</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t358.3.3%20%E8%AE%BE%E7%BD%AE%E4%BB%93%E5%BA%93%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">8.3.3 设置仓库环境变量</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t368.3.4%20Github%E7%94%9F%E6%88%90%E8%AE%BF%E9%97%AE%E4%BB%A4%E7%89%8C%20(%E5%8D%B3%E6%B7%BB%E5%8A%A0%E6%8E%88%E6%9D%83)">8.3.4 Github生成访问令牌 (即添加授权)</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t378.3.5%20.travis.yml">8.3.5 .travis.yml</a></li></ul></li></ul></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t389.React%E5%85%83%E7%B4%A0">9.React元素</a><ul><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t399.1%20%E5%8E%9F%E7%94%9F%E7%BB%84%E4%BB%B6">9.1 原生组件</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t409.2%20%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6">9.2 函数组件</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t419.3%20%E7%B1%BB%E7%BB%84%E4%BB%B6">9.3 类组件</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t4210.%20%E5%88%9B%E5%BB%BA%E7%BB%84%E4%BB%B6">10. 创建组件</a><ul><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t4310.1%20Counter.tsx">10.1 Counter.tsx</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t4410.2%20types.tsx">10.2 types.tsx</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t4510.3%20TodoItem.tsx">10.3 TodoItem.tsx</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t4610.4%20TodoInput.tsx">10.4 TodoInput.tsx</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t4710.5%20Todos\index.tsx">10.5 Todos\index.tsx</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t4810.6%20src\index.tsx">10.6 src\index.tsx</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t4911.%20%E9%BB%98%E8%AE%A4%E5%B1%9E%E6%80%A7">11. 默认属性</a><ul><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t5011.1%20TodoInput.tsx">11.1 TodoInput.tsx</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t5112.%20%E9%AB%98%E9%98%B6%E7%BB%84%E4%BB%B6">12. 高阶组件</a><ul><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t5212.1%20%E5%AE%89%E8%A3%85">12.1 安装</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t5312.2%20src\utils.tsx">12.2 src\utils.tsx</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t5412.3%20TodoInput.tsx">12.3 TodoInput.tsx</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t5512.4%20src\hoistNonReactStatics.tsx">12.4 src\hoistNonReactStatics.tsx</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t5613.%20%E9%9B%86%E6%88%90redux">13. 集成redux</a><ul><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t5713.1%20models\todos.tsx">13.1 models\todos.tsx</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t5813.2%20models\index.tsx">13.2 models\index.tsx</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t5913.3%20action-types.tsx">13.3 action-types.tsx</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t6013.4%20reducers\counter.tsx">13.4 reducers\counter.tsx</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t6113.5%20reducers\todos.tsx">13.5 reducers\todos.tsx</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t6213.6%20reducers\index.tsx">13.6 reducers\index.tsx</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t6313.7%20actions\counter.tsx">13.7 actions\counter.tsx</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t6413.8%20actions\todos.tsx">13.8 actions\todos.tsx</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t6513.9%20actions\index.tsx">13.9 actions\index.tsx</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t6613.10%20components\Counter.tsx">13.10 components\Counter.tsx</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t6713.11%20TodoItem.tsx">13.11 TodoItem.tsx</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t6813.12%20TodoInput.tsx">13.12 TodoInput.tsx</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t6913.13%20Todos\index.tsx">13.13 Todos\index.tsx</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t7013.14%20store\index.tsx">13.14 store\index.tsx</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t7113.15%20src\index.tsx">13.15 src\index.tsx</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t7214.%20%E4%BD%BF%E7%94%A8%E8%B7%AF%E7%94%B1">14. 使用路由</a><ul><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t7314.1%20src\index.tsx">14.1 src\index.tsx</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t7414.2%20Counter.tsx">14.2 Counter.tsx</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t7514.3%20Todos\index.tsx">14.3 Todos\index.tsx</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t7615.%20connected-react-router">15. connected-react-router</a><ul><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t7715.1%20src\history.tsx">15.1 src\history.tsx</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t7815.2%20src\index.tsx">15.2 src\index.tsx</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t7915.3%20store\index.tsx">15.3 store\index.tsx</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t8015.4%20reducers\index.tsx">15.4 reducers\index.tsx</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t8115.5%20actions\counter.tsx">15.5 actions\counter.tsx</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t8215.6%20actions\index.tsx">15.6 actions\index.tsx</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t8315.7%20Counter.tsx">15.7 Counter.tsx</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t8415.8%20Todos\index.tsx">15.8 Todos\index.tsx</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t8516.%20redux-thunk">16. redux-thunk</a><ul><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t8616.1%20redux-thunk\index.tsx">16.1 redux-thunk\index.tsx</a></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t8716.2%20store\index.tsx">16.2 store\index.tsx</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t88%E5%8F%82%E8%80%83">参考</a></li></ul>
+    </div>
+    
+    <div class="content markdown-body">
+        <!-- <p><img src="http://www.zhufengpeixun.com/珠峰架构师成长计划_files/下载.png" alt="下载"></p> -->
+<h2 id="t01. TypeScript工程化开发">1. TypeScript工程化开发 <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t01.%20TypeScript%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%BC%80%E5%8F%91"> # </a></h2>
+<ul>
+<li>前端工程化就是通过流程规范化、标准化提升团队协作效率</li>
+<li>通过组件化、模块化提升代码质量</li>
+<li>使用构建工具、自动化工具提升开发效率</li>
+<li>编译 =&gt; 打包(合并) =&gt; 压缩 =&gt; 代码检查 =&gt; 测试 =&gt; 持续集成</li>
+</ul>
+<h2 id="t12.初始化项目">2.初始化项目 <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t12.%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE"> # </a></h2>
+<pre><code class="lang-js">mkdir zhufeng_typescript_development
+cd zhufeng_typescript_development
+npm init
+package name: (zhufeng_typescript_development)
+<span class="hljs-attr">version</span>: (<span class="hljs-number">1.0</span><span class="hljs-number">.0</span>)
+<span class="hljs-attr">description</span>: TypeScript工程化开发
+entry point: (index.js)
+test command:
+git repository: https:<span class="hljs-comment">//gitee.com/zhufengpeixun/zhufeng_typescript_development</span>
+keywords: typescript,react
+<span class="hljs-attr">author</span>: zhangrenyang
+<span class="hljs-attr">license</span>: (ISC) MIT
+</code></pre>
+<h3 id="t23. git规范和changelog">3. git规范和changelog <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t23.%20git%E8%A7%84%E8%8C%83%E5%92%8Cchangelog"> # </a></h3>
+<h4 id="t33.1  良好的git commit好处">3.1  良好的git commit好处 <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t33.1%20%20%E8%89%AF%E5%A5%BD%E7%9A%84git%20commit%E5%A5%BD%E5%A4%84"> # </a></h4>
+<ul>
+<li>可以加快code review 的流程</li>
+<li>可以根据git commit 的元数据生成changelog</li>
+<li>可以让其它开发者知道修改的原因</li>
+</ul>
+<h4 id="t43.2  良好的commit">3.2  良好的commit <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t43.2%20%20%E8%89%AF%E5%A5%BD%E7%9A%84commit"> # </a></h4>
+<ul>
+<li><a href="https://www.npmjs.com/package/commitizen">commitizen</a>是一个格式化commit message的工具</li>
+<li><a href="https://www.npmjs.com/package/validate-commit-msg">validate-commit-msg</a> 用于检查项目的 <code>Commit message</code> 是否符合格式</li>
+<li><p><a href="https://www.npmjs.com/package/conventional-changelog-cli">conventional-changelog-cli</a>可以从<code>git metadata</code>生成变更日志</p>
+</li>
+<li><p>统一团队的git commit 标准</p>
+</li>
+<li>可以使用<code>angular</code>的<code>git commit</code>日志作为基本规范<ul>
+<li>提交的类型限制为  feat、fix、docs、style、refactor、perf、test、chore、revert等</li>
+<li>提交信息分为两部分，标题(首字母不大写，末尾不要加标点)、主体内容(描述修改内容)</li>
+</ul>
+</li>
+<li>日志提交友好的类型选择提示 使用commitize工具</li>
+<li>不符合要求格式的日志拒绝提交 的保障机制<ul>
+<li>需要使用<code>validate-commit-msg</code>工具</li>
+</ul>
+</li>
+<li>统一changelog文档信息生成<ul>
+<li>使用<code>conventional-changelog-cli</code>工具</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-js">cnpm i commitizen  validate-commit-msg conventional-changelog-cli -D
+commitizen init cz-conventional-changelog --save --save-exact
+git cz
+</code></pre>
+<h4 id="t53.3 .gitignore">3.3 .gitignore <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t53.3%20.gitignore"> # </a></h4>
+<p>.gitignore</p>
+<pre><code class="lang-js">node_modules
+.vscode
+dist
+</code></pre>
+<h4 id="t63.4 提交的格式">3.4 提交的格式 <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t63.4%20%E6%8F%90%E4%BA%A4%E7%9A%84%E6%A0%BC%E5%BC%8F"> # </a></h4>
+<pre><code class="lang-js">&lt;type&gt;(&lt;scope&gt;):&lt;subject/&gt;
+&lt;BLANK LINE&gt;
+&lt;body&gt;
+&lt;BLANK LINE&gt;
+&lt;footer&gt;
+</code></pre>
+<ul>
+<li><type>代表某次提交的类型，比如是修复bug还是增加feature</type></li>
+<li><scope>表示作用域，比如一个页面或一个组件</scope></li>
+<li><subject> 主题 ，概述本次提交的内容</subject></li>
+<li> 详细的影响内容</li>
+<li><footer> 修复的bug和issue链接</footer></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">feat</td>
+<td style="text-align:left">新增feature</td>
+</tr>
+<tr>
+<td style="text-align:left">fix</td>
+<td style="text-align:left">修复bug</td>
+</tr>
+<tr>
+<td style="text-align:left">docs</td>
+<td style="text-align:left">仅仅修改了文档，比如README、CHANGELOG、CONTRIBUTE等</td>
+</tr>
+<tr>
+<td style="text-align:left">style</td>
+<td style="text-align:left">仅仅修改了空格、格式缩进、偏好等信息，不改变代码逻辑</td>
+</tr>
+<tr>
+<td style="text-align:left">refactor</td>
+<td style="text-align:left">代码重构，没有新增功能或修复bug</td>
+</tr>
+<tr>
+<td style="text-align:left">perf</td>
+<td style="text-align:left">优化相关，提升了性能和体验</td>
+</tr>
+<tr>
+<td style="text-align:left">test</td>
+<td style="text-align:left">测试用例，包括单元测试和集成测试</td>
+</tr>
+<tr>
+<td style="text-align:left">chore</td>
+<td style="text-align:left">改变构建流程，或者添加了依赖库和工具</td>
+</tr>
+<tr>
+<td style="text-align:left">revert</td>
+<td style="text-align:left">回滚到上一个版本</td>
+</tr>
+<tr>
+<td style="text-align:left">ci</td>
+<td style="text-align:left">CI 配置，脚本文件等更新</td>
+</tr>
+</tbody>
+</table>
+<h4 id="t73.4 husky">3.4 husky <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t73.4%20husky"> # </a></h4>
+<ul>
+<li><code>validate-commit-msg</code>可以来检查我们的commit规范</li>
+<li>husky可以把<code>validate-commit-msg</code>作为一个<code>githook</code>来验证提交消息</li>
+</ul>
+<pre><code class="lang-js">cnpm i husky  validate-commit-msg --save-dev
+</code></pre>
+<pre><code class="lang-json">  "husky": {
+    "hooks": {
+      "commit-msg": "validate-commit-msg"
+    }
+  }
+</code></pre>
+<h4 id="t83.5 生成CHANGELOG.md">3.5 生成CHANGELOG.md <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t83.5%20%E7%94%9F%E6%88%90CHANGELOG.md"> # </a></h4>
+<ul>
+<li><code>conventional-changelog-cli</code> 默认推荐的 commit 标准是来自angular项目</li>
+<li>参数<code>-i CHANGELOG.md</code>表示从 <code>CHANGELOG.md</code> 读取 <code>changelog</code></li>
+<li>参数 -s 表示读写 <code>CHANGELOG.md</code> 为同一文件</li>
+<li>参数 -r 表示生成 changelog 所需要使用的 release 版本数量，默认为1，全部则是0</li>
+</ul>
+<pre><code class="lang-js">cnpm i conventional-changelog-cli -D
+</code></pre>
+<pre><code class="lang-json">"scripts": {
+    "changelogs": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+}
+</code></pre>
+<h2 id="t94. 支持Typescript">4. 支持Typescript <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t94.%20%E6%94%AF%E6%8C%81Typescript"> # </a></h2>
+<ul>
+<li><a href="http://www.typescriptlang.org/docs/handbook/tsconfig-json.html">tsconfig-json</a></li>
+<li><a href="http://www.typescriptlang.org/docs/handbook/compiler-options.html">编译选项</a></li>
+</ul>
+<pre><code class="lang-js">tsc --init
+</code></pre>
+<p><strong>基本参数</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">target</td>
+<td style="text-align:left">用于指定编译之后的版本目标</td>
+</tr>
+<tr>
+<td style="text-align:left">module</td>
+<td style="text-align:left">生成的模块形式：none、commonjs、amd、system、umd、es6、es2015 或 esnext 只有 amd 和 system 能和 outFile 一起使用 target 为 es5 或更低时可用 es6 和 es2015</td>
+</tr>
+<tr>
+<td style="text-align:left">lib</td>
+<td style="text-align:left">编译时引入的 ES 功能库，包括：es5 、es6、es7、dom 等。如果未设置，则默认为： target 为 es5 时: ["dom", "es5", "scripthost"] target 为 es6 时: ["dom", "es6", "dom.iterable", "scripthost"]</td>
+</tr>
+<tr>
+<td style="text-align:left">allowJs</td>
+<td style="text-align:left">是否允许编译JS文件，默认是false，即不编译JS文件</td>
+</tr>
+<tr>
+<td style="text-align:left">checkJs</td>
+<td style="text-align:left">是否检查和报告JS文件中的错误，默认是false</td>
+</tr>
+<tr>
+<td style="text-align:left">jsx</td>
+<td style="text-align:left">指定jsx代码用于的开发环境 <code>preserve</code>指保留JSX语法,扩展名为<code>.jsx</code>,react-native是指保留jsx语法，扩展名js,react指会编译成ES5语法 <a href="http://www.typescriptlang.org/docs/handbook/jsx.html">详解</a></td>
+</tr>
+<tr>
+<td style="text-align:left">declaration</td>
+<td style="text-align:left">是否在编译的时候生成相应的<code>.d.ts</code>声明文件</td>
+</tr>
+<tr>
+<td style="text-align:left">declarationDir</td>
+<td style="text-align:left">生成的 .d.ts 文件存放路径,默认与 .ts 文件相同</td>
+</tr>
+<tr>
+<td style="text-align:left">declarationMap</td>
+<td style="text-align:left">是否为声明文件.d.ts生成map文件</td>
+</tr>
+<tr>
+<td style="text-align:left">sourceMap</td>
+<td style="text-align:left">编译时是否生成<code>.map</code>文件</td>
+</tr>
+<tr>
+<td style="text-align:left">outFile</td>
+<td style="text-align:left">是否将输出文件合并为一个文件，值是一个文件路径名，只有设置<code>module</code>的值为<code>amd</code>和<code>system</code>模块时才支持这个配置</td>
+</tr>
+<tr>
+<td style="text-align:left">outDir</td>
+<td style="text-align:left">指定输出文件夹</td>
+</tr>
+<tr>
+<td style="text-align:left">rootDir</td>
+<td style="text-align:left">编译文件的根目录，编译器会在根目录查找入口文件</td>
+</tr>
+<tr>
+<td style="text-align:left">composite</td>
+<td style="text-align:left">是否编译构建引用项目</td>
+</tr>
+<tr>
+<td style="text-align:left">removeComments</td>
+<td style="text-align:left">是否将编译后的文件中的注释删掉</td>
+</tr>
+<tr>
+<td style="text-align:left">noEmit</td>
+<td style="text-align:left">不生成编译文件</td>
+</tr>
+<tr>
+<td style="text-align:left">importHelpers</td>
+<td style="text-align:left">是否引入<code>tslib</code>里的辅助工具函数</td>
+</tr>
+<tr>
+<td style="text-align:left">downlevelIteration</td>
+<td style="text-align:left">当target为<code>ES5</code>或<code>ES3</code>时，为<code>for-of</code>、<code>spread</code>和<code>destructuring</code>中的迭代器提供完全支持</td>
+</tr>
+<tr>
+<td style="text-align:left">isolatedModules</td>
+<td style="text-align:left">指定是否将每个文件作为单独的模块，默认为true</td>
+</tr>
+</tbody>
+</table>
+<p><strong>严格检查</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">strict</td>
+<td style="text-align:left">是否启动所有类型检查</td>
+</tr>
+<tr>
+<td style="text-align:left">noImplicitAny</td>
+<td style="text-align:left">不允许默认any类型</td>
+</tr>
+<tr>
+<td style="text-align:left">strictNullChecks</td>
+<td style="text-align:left">当设为true时，null和undefined值不能赋值给非这两种类型的值</td>
+</tr>
+<tr>
+<td style="text-align:left">strictFunctionTypes</td>
+<td style="text-align:left">是否使用函数参数双向协变检查</td>
+</tr>
+<tr>
+<td style="text-align:left">strictBindCallApply</td>
+<td style="text-align:left">是否对bind、call和apply绑定的方法的参数的检测是严格检测的</td>
+</tr>
+<tr>
+<td style="text-align:left">strictPropertyInitialization</td>
+<td style="text-align:left">检查类的非undefined属性是否已经在构造函数里初始化</td>
+</tr>
+<tr>
+<td style="text-align:left">noImplicitThis</td>
+<td style="text-align:left">不允许<code>this</code>表达式的值为<code>any</code>类型的时候</td>
+</tr>
+<tr>
+<td style="text-align:left">alwaysStrict</td>
+<td style="text-align:left">指定始终以严格模式检查每个模块</td>
+</tr>
+</tbody>
+</table>
+<p><strong>额外检查</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">noUnusedLocals</td>
+<td style="text-align:left">检查是否有定义了但是没有使用的变量</td>
+</tr>
+<tr>
+<td style="text-align:left">noUnusedParameters</td>
+<td style="text-align:left">检查是否有在函数体中没有使用的参数</td>
+</tr>
+<tr>
+<td style="text-align:left">noImplicitReturns</td>
+<td style="text-align:left">检查函数是否有返回值</td>
+</tr>
+<tr>
+<td style="text-align:left">noFallthroughCasesInSwitch</td>
+<td style="text-align:left">检查switch中是否有case没有使用break跳出</td>
+</tr>
+</tbody>
+</table>
+<p><strong>模块解析检查</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">moduleResolution</td>
+<td style="text-align:left">选择模块解析策略，有<code>node</code>和<code>classic</code>两种类型,<a href="http://www.typescriptlang.org/docs/handbook/module-resolution.html">详细说明</a></td>
+</tr>
+<tr>
+<td style="text-align:left">baseUrl</td>
+<td style="text-align:left">解析非相对模块名称的基本目录</td>
+</tr>
+<tr>
+<td style="text-align:left">paths</td>
+<td style="text-align:left">设置模块名到基于<code>baseUrl</code>的路径映射</td>
+</tr>
+<tr>
+<td style="text-align:left">rootDirs</td>
+<td style="text-align:left">可以指定一个路径列表，在构建时编译器会将这个路径列表中的路径中的内容都放到一个文件夹中</td>
+</tr>
+<tr>
+<td style="text-align:left">typeRoots</td>
+<td style="text-align:left">指定声明文件或文件夹的路径列表</td>
+</tr>
+<tr>
+<td style="text-align:left">types</td>
+<td style="text-align:left">用来指定需要包含的模块</td>
+</tr>
+<tr>
+<td style="text-align:left">allowSyntheticDefaultImports</td>
+<td style="text-align:left">允许从没有默认导出的模块中默认导入</td>
+</tr>
+<tr>
+<td style="text-align:left">esModuleInterop</td>
+<td style="text-align:left">为导入内容创建命名空间,实现CommonJS和ES模块之间的互相访问</td>
+</tr>
+<tr>
+<td style="text-align:left">preserveSymlinks</td>
+<td style="text-align:left">不把符号链接解析为其真实路径</td>
+</tr>
+</tbody>
+</table>
+<p><strong>sourcemap检查</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">sourceRoot</td>
+<td style="text-align:left">调试器应该找到TypeScript文件而不是源文件位置</td>
+</tr>
+<tr>
+<td style="text-align:left">mapRoot</td>
+<td style="text-align:left">调试器找到映射文件而非生成文件的位置，指定map文件的根路径</td>
+</tr>
+<tr>
+<td style="text-align:left">inlineSourceMap</td>
+<td style="text-align:left">指定是否将map文件的内容和js文件编译在一个同一个js文件中</td>
+</tr>
+<tr>
+<td style="text-align:left">inlineSources</td>
+<td style="text-align:left">是否进一步将.ts文件的内容也包含到输出文件中</td>
+</tr>
+</tbody>
+</table>
+<p><strong>试验选项</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">experimentalDecorators</td>
+<td style="text-align:left">是否启用实验性的装饰器特性</td>
+</tr>
+<tr>
+<td style="text-align:left">emitDecoratorMetadata</td>
+<td style="text-align:left">是否为装饰器提供元数据支持</td>
+</tr>
+</tbody>
+</table>
+<p><strong>试验选项</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">files</td>
+<td style="text-align:left">配置一个数组列表，里面包含指定文件的相对或绝对路径，编译器在编译的时候只会编译包含在files中列出的文件</td>
+</tr>
+<tr>
+<td style="text-align:left">include</td>
+<td style="text-align:left">include也可以指定要编译的路径列表，但是和files的区别在于，这里的路径可以是文件夹，也可以是文件</td>
+</tr>
+<tr>
+<td style="text-align:left">exclude</td>
+<td style="text-align:left">exclude表示要排除的、不编译的文件，他也可以指定一个列表</td>
+</tr>
+<tr>
+<td style="text-align:left">extends</td>
+<td style="text-align:left">extends可以通过指定一个其他的tsconfig.json文件路径，来继承这个配置文件里的配置</td>
+</tr>
+<tr>
+<td style="text-align:left">compileOnSave</td>
+<td style="text-align:left">在我们编辑了项目中文件保存的时候，编辑器会根据<code>tsconfig.json</code>的配置重新生成文件</td>
+</tr>
+<tr>
+<td style="text-align:left">references</td>
+<td style="text-align:left">一个对象数组,指定要引用的项目</td>
+</tr>
+</tbody>
+</table>
+<h2 id="t105. 支持React">5. 支持React <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t105.%20%E6%94%AF%E6%8C%81React"> # </a></h2>
+<h3 id="t115.1 安装">5.1 安装 <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t115.1%20%E5%AE%89%E8%A3%85"> # </a></h3>
+<pre><code class="lang-js">cnpm i react react-dom @types/react @types/react-dom react-router-dom @types/react-router-dom   -S
+cnpm i webpack webpack-cli webpack-dev-server html-webpack-plugin hoist-non-react-statics -D
+cnpm i typescript ts-loader source-map-loader -D
+cnpm i redux react-redux @types/react-redux redux-thunk  redux-logger @types/redux-logger -S
+cnpm i connected-react-router -S
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">包名</th>
+<th style="text-align:left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">react @types/react</td>
+<td style="text-align:left">react核心库</td>
+</tr>
+<tr>
+<td style="text-align:left">react-dom @types/react-dom</td>
+<td style="text-align:left">react操作DOM库</td>
+</tr>
+<tr>
+<td style="text-align:left">react-router-dom @types/react-router-dom</td>
+<td style="text-align:left">react路由库</td>
+</tr>
+<tr>
+<td style="text-align:left">webpack</td>
+<td style="text-align:left">webpack核心库</td>
+</tr>
+<tr>
+<td style="text-align:left">webpack-cli</td>
+<td style="text-align:left">webpack命令行文件</td>
+</tr>
+<tr>
+<td style="text-align:left">webpack-dev-server</td>
+<td style="text-align:left">webpack开发服务器</td>
+</tr>
+<tr>
+<td style="text-align:left">html-webpack-plugin</td>
+<td style="text-align:left">webpack用于生成html的插件</td>
+</tr>
+<tr>
+<td style="text-align:left">redux</td>
+<td style="text-align:left">全局状态管理库</td>
+</tr>
+<tr>
+<td style="text-align:left">react-redux @types/react-redux</td>
+<td style="text-align:left">连接react和redux的库</td>
+</tr>
+<tr>
+<td style="text-align:left">redux-thunk</td>
+<td style="text-align:left">可以让store派发一个函数的中间件</td>
+</tr>
+<tr>
+<td style="text-align:left">redux-logger @types/redux-logger</td>
+<td style="text-align:left">可以在状态改变前后打印状态的中间件</td>
+</tr>
+<tr>
+<td style="text-align:left">typescript</td>
+<td style="text-align:left">JavaScript语言扩展</td>
+</tr>
+<tr>
+<td style="text-align:left">ts-loader</td>
+<td style="text-align:left">可以让Webpack使用TypeScript的标准配置文件<code>tsconfig.json</code>编译TypeScript代码</td>
+</tr>
+<tr>
+<td style="text-align:left">source-map-loader</td>
+<td style="text-align:left">使用任意来自Typescript的sourcemap输出，以此通知webpack何时生成自己的sourcemaps,这让你在调试最终生成的文件时就好像在调试TypeScript源码一样</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>ts-loader可以让Webpack使用TypeScript的标准配置文件tsconfig.json编译TypeScript代码。</li>
+<li>source-map-loader使用任意来自Typescript的sourcemap输出，以此通知webpack何时生成自己的sourcemaps,这让你在调试最终生成的文件时就好像在调试TypeScript源码一样。</li>
+</ul>
+<h3 id="t125.2 tsconfig.json">5.2 tsconfig.json <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t125.2%20tsconfig.json"> # </a></h3>
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"compilerOptions"</span>: {
+    <span class="hljs-attr">"outDir"</span>: <span class="hljs-string">"./dist"</span>,
+    <span class="hljs-attr">"sourceMap"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"strict"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"noImplicitAny"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"strictNullChecks"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"module"</span>: <span class="hljs-string">"commonjs"</span>,
+    <span class="hljs-attr">"target"</span>: <span class="hljs-string">"es5"</span>,
+    <span class="hljs-attr">"jsx"</span>: <span class="hljs-string">"react"</span>,
+    <span class="hljs-attr">"baseUrl"</span>: <span class="hljs-string">"."</span>,
+    <span class="hljs-attr">"paths"</span>: {
+      <span class="hljs-attr">"@/*"</span>: [
+        <span class="hljs-string">"src/*"</span>
+      ]
+    }
+  },
+  <span class="hljs-attr">"include"</span>: [
+    <span class="hljs-string">"./src/**/*"</span>
+  ]
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">包名</th>
+<th style="text-align:left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">outDir</td>
+<td style="text-align:left">指定输出目录</td>
+</tr>
+<tr>
+<td style="text-align:left">sourceMap</td>
+<td style="text-align:left">把 ts 文件编译成 js 文件的时候，同时生成对应的sourceMap文件</td>
+</tr>
+<tr>
+<td style="text-align:left">noImplicitAny</td>
+<td style="text-align:left">如果为true的话，TypeScript 编译器无法推断出类型时，它仍然会生成 JavaScript 文件，但是它也会报告一个错误</td>
+</tr>
+<tr>
+<td style="text-align:left">module</td>
+<td style="text-align:left">代码规范</td>
+</tr>
+<tr>
+<td style="text-align:left">target</td>
+<td style="text-align:left">转换成es5</td>
+</tr>
+<tr>
+<td style="text-align:left">jsx</td>
+<td style="text-align:left">react模式会生成React.createElement，在使用前不需要再进行转换操作了，输出文件的扩展名为.js</td>
+</tr>
+<tr>
+<td style="text-align:left">include</td>
+<td style="text-align:left">需要编译的目录</td>
+</tr>
+</tbody>
+</table>
+<h3 id="t135.3 webpack.config.js">5.3 webpack.config.js <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t135.3%20webpack.config.js"> # </a></h3>
+<p>webpack.config.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> webpack = <span class="hljs-built_in">require</span>(<span class="hljs-string">"webpack"</span>);
+<span class="hljs-keyword">const</span> HtmlWebpackPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">"html-webpack-plugin"</span>);
+<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">"path"</span>);
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">mode</span>: <span class="hljs-string">"development"</span>,
+  <span class="hljs-attr">devtool</span>:<span class="hljs-literal">false</span>,
+  <span class="hljs-attr">entry</span>: <span class="hljs-string">"./src/index.tsx"</span>,
+  <span class="hljs-attr">output</span>: {
+    <span class="hljs-attr">filename</span>: <span class="hljs-string">"[name].[hash].js"</span>,
+    <span class="hljs-attr">path</span>: path.join(__dirname, <span class="hljs-string">"dist"</span>),
+  },
+  <span class="hljs-attr">devServer</span>: {
+    <span class="hljs-attr">hot</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">contentBase</span>: path.join(__dirname, <span class="hljs-string">"dist"</span>),
+    <span class="hljs-attr">historyApiFallback</span>: {
+      <span class="hljs-attr">index</span>: <span class="hljs-string">"./index.html"</span>,
+    },
+  },
+  <span class="hljs-attr">resolve</span>: {
+    <span class="hljs-attr">extensions</span>: [<span class="hljs-string">".ts"</span>, <span class="hljs-string">".tsx"</span>, <span class="hljs-string">".js"</span>, <span class="hljs-string">".json"</span>],
+    <span class="hljs-attr">alias</span>: {
+      <span class="hljs-string">"@"</span>: path.resolve(<span class="hljs-string">"src"</span>), <span class="hljs-comment">// 这样配置后 @ 可以指向 src 目录</span>
+    },
+  },
+
+  <span class="hljs-attr">module</span>: {
+    <span class="hljs-attr">rules</span>: [
+      {
+        <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.tsx?$/</span>,
+        <span class="hljs-attr">loader</span>: <span class="hljs-string">"ts-loader"</span>
+      }
+    ],
+  },
+
+  <span class="hljs-attr">plugins</span>: [
+    <span class="hljs-keyword">new</span> HtmlWebpackPlugin({
+      <span class="hljs-attr">template</span>: <span class="hljs-string">"./src/index.html"</span>
+    }),
+    <span class="hljs-keyword">new</span> webpack.HotModuleReplacementPlugin()
+  ],
+};
+
+</code></pre>
+<h3 id="t145.3 src\index.tsx">5.3 src\index.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t145.3%20src\index.tsx"> # </a></h3>
+<p>src\index.tsx</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> ReactDOM <span class="hljs-keyword">from</span> <span class="hljs-string">'react-dom'</span>;
+<span class="hljs-keyword">let</span> root = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'root'</span>);
+
+<span class="hljs-keyword">let</span> props = { <span class="hljs-attr">className</span>: <span class="hljs-string">'title'</span> };
+<span class="hljs-keyword">let</span> element= React.createElement(<span class="hljs-string">'div'</span>, props, <span class="hljs-string">'hello'</span>);
+ReactDOM.render(element, root);
+</code></pre>
+<h3 id="t155.4 src\index.html">5.4 src\index.html <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t155.4%20src\index.html"> # </a></h3>
+<p>src\index.html</p>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>typescript<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"root"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<h3 id="t165.5 package.json">5.5 package.json <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t165.5%20package.json"> # </a></h3>
+<pre><code class="lang-diff">{
+  "scripts": {
+<span class="hljs-addition">+    "start": "webpack serve --config webpack.config.js",</span>
+<span class="hljs-addition">+    "build": "webpack --config webpack.config.js"</span>
+    "eslint": "eslint src --ext .ts",
+    "eslint:fix": "eslint src --ext .ts --fix",
+    "changelogs": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "test": "mocha --require ts-node/register test/**/*"
+  }
+}
+</code></pre>
+<h2 id="t176. 代码规范">6. 代码规范 <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t176.%20%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83"> # </a></h2>
+<ul>
+<li>规范的代码可以促进团队合作</li>
+<li>规范的代码可以降低维护成本</li>
+<li>规范的代码有助于 code review(代码审查)</li>
+</ul>
+<h3 id="t186.1 常见的代码规范文档">6.1 常见的代码规范文档 <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t186.1%20%E5%B8%B8%E8%A7%81%E7%9A%84%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83%E6%96%87%E6%A1%A3"> # </a></h3>
+<ul>
+<li><a href="https://github.com/lin-123/javascript">airbnb中文版</a></li>
+<li><a href="https://github.com/standard/standard/blob/master/docs/README-zhcn.md">standard中文版</a></li>
+<li><a href="https://github.com/ecomfe/spec">百度前端编码规范</a></li>
+<li><a href="https://github.com/fex-team/styleguide/blob/master/css.md">styleguide</a></li>
+<li><a href="https://github.com/ecomfe/spec/blob/master/css-style-guide.md">CSS编码规范</a></li>
+</ul>
+<h3 id="t196.2 代码检查">6.2 代码检查 <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t196.2%20%E4%BB%A3%E7%A0%81%E6%A3%80%E6%9F%A5"> # </a></h3>
+<ul>
+<li><a href="https://eslint.org/">Eslint</a> 是一款插件化的 JavaScript 静态代码检查工具，ESLint 通过规则来描述具体的检查行为</li>
+</ul>
+<h4 id="t206.2.1 模块安装">6.2.1 模块安装 <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t206.2.1%20%E6%A8%A1%E5%9D%97%E5%AE%89%E8%A3%85"> # </a></h4>
+<pre><code class="lang-js">cnpm i eslint typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin --save-dev
+</code></pre>
+<h4 id="t216.2.2 eslintrc配置文件">6.2.2 eslintrc配置文件 <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t216.2.2%20eslintrc%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"> # </a></h4>
+<ul>
+<li><a href="https://eslint.org/docs/rules/">英文rules</a></li>
+<li><a href="https://cn.eslint.org/docs/rules/">中文rules</a></li>
+<li>需要添加<code>parserOptions</code>以支持模块化的写法</li>
+</ul>
+<p>.eslintrc.js</p>
+<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports = {
+    <span class="hljs-string">"parser"</span>:<span class="hljs-string">"@typescript-eslint/parser"</span>,
+    <span class="hljs-string">"plugins"</span>:[<span class="hljs-string">"@typescript-eslint"</span>],
+    <span class="hljs-string">"rules"</span>:{
+        <span class="hljs-string">"no-var"</span>:<span class="hljs-string">"error"</span>,
+        <span class="hljs-string">"no-extra-semi"</span>:<span class="hljs-string">"error"</span>,
+        <span class="hljs-string">"@typescript-eslint/indent"</span>:[<span class="hljs-string">"error"</span>,<span class="hljs-number">2</span>]
+    },
+    <span class="hljs-string">"parserOptions"</span>: {
+        <span class="hljs-string">"ecmaVersion"</span>: <span class="hljs-number">6</span>,
+        <span class="hljs-string">"sourceType"</span>: <span class="hljs-string">"module"</span>,
+        <span class="hljs-string">"ecmaFeatures"</span>: {
+          <span class="hljs-string">"modules"</span>: <span class="hljs-literal">true</span>
+        }
+    }
+}
+</code></pre>
+<h4 id="t226.2.3 代码检查">6.2.3 代码检查 <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t226.2.3%20%E4%BB%A3%E7%A0%81%E6%A3%80%E6%9F%A5"> # </a></h4>
+<p>package.json</p>
+<pre><code class="lang-diff">"scripts": {
+    "start": "webpack",
+    "build": "tsc",
+<span class="hljs-addition">+    "lint": "eslint src --ext .tsx",</span>
+<span class="hljs-addition">+    "lint:fix": "eslint src --ext .tsx --fix"</span>
+  }
+</code></pre>
+<p>src/1.ts</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> name2 = <span class="hljs-string">'zhufeng'</span>;;;
+<span class="hljs-keyword">if</span>(<span class="hljs-literal">true</span>){
+    <span class="hljs-keyword">let</span> a = <span class="hljs-number">10</span>;
+}
+</code></pre>
+<p>执行命令</p>
+<pre><code class="lang-js">npm run eslint
+<span class="hljs-number">1</span>:<span class="hljs-number">1</span>   error  Unexpected <span class="hljs-keyword">var</span>, use <span class="hljs-keyword">let</span> or <span class="hljs-keyword">const</span> instead      no-<span class="hljs-keyword">var</span>
+<span class="hljs-number">1</span>:<span class="hljs-number">23</span>  error  Unnecessary semicolon                         no-extra-semi
+<span class="hljs-number">1</span>:<span class="hljs-number">24</span>  error  Unnecessary semicolon                         no-extra-semi
+<span class="hljs-number">3</span>:<span class="hljs-number">1</span>   error  Expected indentation <span class="hljs-keyword">of</span> <span class="hljs-number">2</span> spaces but found <span class="hljs-number">4</span>  @typescript-eslint/indent
+</code></pre>
+<h4 id="t236.2.4 配置自动修复">6.2.4 配置自动修复 <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t236.2.4%20%E9%85%8D%E7%BD%AE%E8%87%AA%E5%8A%A8%E4%BF%AE%E5%A4%8D"> # </a></h4>
+<ul>
+<li>安装vscode的<a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint">eslint</a>插件</li>
+<li>配置自动修复参数</li>
+</ul>
+<p>.vscode\settings.json</p>
+<pre><code class="lang-js">{
+    <span class="hljs-string">"eslint.validate"</span>: [
+        <span class="hljs-string">"javascript"</span>,
+        <span class="hljs-string">"javascriptreact"</span>,
+        <span class="hljs-string">"typescript"</span>,
+        <span class="hljs-string">"typescriptreact"</span>
+    ],
+    <span class="hljs-string">"editor.codeActionsOnSave"</span>: {
+        <span class="hljs-string">"source.fixAll.eslint"</span>: <span class="hljs-literal">true</span>
+    }
+  }
+</code></pre>
+<h2 id="t247.单元测试">7.单元测试 <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t247.%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95"> # </a></h2>
+<h3 id="t257.1 安装配置">7.1 安装配置 <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t257.1%20%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE"> # </a></h3>
+<pre><code class="lang-js">cnpm i jest @types/jest ts-jest -D
+npx ts-jest config:init
+</code></pre>
+<h3 id="t267.2 src\sum.tsx">7.2 src\sum.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t267.2%20src\sum.tsx"> # </a></h3>
+<p>src\sum.tsx</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span>(<span class="hljs-params">a: number, b: number</span>) </span>{
+  <span class="hljs-keyword">return</span> a + b;
+}
+<span class="hljs-built_in">module</span>.exports = {
+  sum
+}
+</code></pre>
+<h3 id="t277.3 tests\sum.spec.tsx">7.3 tests\sum.spec.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t277.3%20tests\sum.spec.tsx"> # </a></h3>
+<p><strong>tests</strong>\sum.spec.tsx</p>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> math = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../src/sum'</span>);
+test(<span class="hljs-string">'1+1=2'</span>, () =&gt; {
+  expect(math.sum(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>)).toBe(<span class="hljs-number">2</span>);
+});
+test(<span class="hljs-string">'1+1=2'</span>, () =&gt; {
+  expect(math.sum(<span class="hljs-number">1</span>, <span class="hljs-number">-1</span>)).toBe(<span class="hljs-number">0</span>);
+});
+</code></pre>
+<h3 id="t287.4 package.json">7.4 package.json <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t287.4%20package.json"> # </a></h3>
+<p>package.json</p>
+<pre><code class="lang-diff">  "scripts": {
+<span class="hljs-addition">+    "test": "jest"</span>
+  },
+</code></pre>
+<h2 id="t298. 持续集成">8. 持续集成 <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t298.%20%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90"> # </a></h2>
+<ul>
+<li><a href="https://travis-ci.com/">Travis CI</a> 提供的是持续集成服务（Continuous Integration，简称 CI）。它绑定 Github 上面的项目，只要有新的代码，就会自动抓取。然后，提供一个运行环境，执行测试，完成构建，还能部署到服务器</li>
+<li>持续集成指的是只要代码有变更，就自动运行构建和测试，反馈运行结果。确保符合预期以后，再将新代码集成到主干</li>
+<li>持续集成的好处在于，每次代码的小幅变更，就能看到运行结果，从而不断累积小的变更，而不是在开发周期结束时，一下子合并一大块代码</li>
+</ul>
+<h3 id="t308.1 登录并创建项目">8.1 登录并创建项目 <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t308.1%20%E7%99%BB%E5%BD%95%E5%B9%B6%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE"> # </a></h3>
+<ul>
+<li><a href="https://travis-ci.com/">Travis CI</a> 只支持 Github,所以你要拥有<code>GitHub</code>帐号</li>
+<li>该帐号下面有一个项目,面有可运行的代码,还包含构建或测试脚本</li>
+<li>你需要激活了一个仓库，<code>Travis</code> 会监听这个仓库的所有变化</li>
+</ul>
+<h3 id="t318.2 .travis.yml">8.2 .travis.yml <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t318.2%20.travis.yml"> # </a></h3>
+<ul>
+<li><code>Travis</code> 要求项目的根目录下面，必须有一个<code>.travis.yml</code>文件。这是配置文件，指定了 Travis 的行为</li>
+<li>该文件必须保存在 Github 仓库里面，一旦代码仓库有新的 <code>Commit</code>，Travis 就会去找这个文件，执行里面的命令</li>
+<li>这个文件采用 YAML 格式。下面是一个最简单的 Node 项目的<code>.travis.yml</code>文件<ul>
+<li>language 字段指定了默认运行环境,<a href="https://docs.travis-ci.com/user/languages">所有的语言在此</a></li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-js">language: node_js
+<span class="hljs-attr">node_js</span>:
+  - <span class="hljs-string">"11"</span>
+<span class="hljs-attr">install</span>: npm install
+<span class="hljs-attr">script</span>:  npm test  
+</code></pre>
+<h3 id="t328.3 实战">8.3 实战 <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t328.3%20%E5%AE%9E%E6%88%98"> # </a></h3>
+<h4 id="t338.3.1 生成项目并上传github">8.3.1 生成项目并上传github <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t338.3.1%20%E7%94%9F%E6%88%90%E9%A1%B9%E7%9B%AE%E5%B9%B6%E4%B8%8A%E4%BC%A0github"> # </a></h4>
+<pre><code class="lang-js">npx create-react-app zhufeng-typescript-development
+</code></pre>
+<h4 id="t348.3.2 同步仓库">8.3.2 同步仓库 <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t348.3.2%20%E5%90%8C%E6%AD%A5%E4%BB%93%E5%BA%93"> # </a></h4>
+<ul>
+<li>登录<a href="https://travis-ci.com/">travis-ci.com</a>选择同步仓库</li>
+</ul>
+<h4 id="t358.3.3 设置仓库环境变量">8.3.3 设置仓库环境变量 <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t358.3.3%20%E8%AE%BE%E7%BD%AE%E4%BB%93%E5%BA%93%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"> # </a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">变量名</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">GH_TOKEN</td>
+<td style="text-align:left">用户生成的令牌</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">GH_REF</td>
+<td style="text-align:left">仓库地址</td>
+<td>github.com/zhufengnodejs/zhufeng_typescript_development.git</td>
+</tr>
+</tbody>
+</table>
+<h4 id="t368.3.4 Github生成访问令牌 (即添加授权)">8.3.4 Github生成访问令牌 (即添加授权) <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t368.3.4%20Github%E7%94%9F%E6%88%90%E8%AE%BF%E9%97%AE%E4%BB%A4%E7%89%8C%20(%E5%8D%B3%E6%B7%BB%E5%8A%A0%E6%8E%88%E6%9D%83)"> # </a></h4>
+<ul>
+<li>访问令牌的作用就是授权仓库操作权限</li>
+<li><a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a></li>
+<li>Github&gt;Developer settings&gt;Personal access tokens&gt; Generate new token &gt; Generate token&gt; Copy Token</li>
+</ul>
+<h4 id="t378.3.5 .travis.yml">8.3.5 .travis.yml <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t378.3.5%20.travis.yml"> # </a></h4>
+<pre><code class="lang-yaml"><span class="hljs-attr">language:</span> <span class="hljs-string">node_js</span>
+<span class="hljs-attr">node_js:</span> 
+    <span class="hljs-bullet">-</span> <span class="hljs-string">'11'</span>
+<span class="hljs-attr">install:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">npm</span> <span class="hljs-string">install</span>
+<span class="hljs-attr">script:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">hexo</span> <span class="hljs-string">g</span>
+<span class="hljs-attr">after_script:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">cd</span> <span class="hljs-string">./public</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">git</span> <span class="hljs-string">init</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">git</span> <span class="hljs-string">config</span> <span class="hljs-string">user.name</span> <span class="hljs-string">"${USERNAME}"</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">git</span> <span class="hljs-string">config</span> <span class="hljs-string">user.email</span> <span class="hljs-string">"${UESREMAIL}"</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">git</span> <span class="hljs-string">add</span> <span class="hljs-string">-A</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">git</span> <span class="hljs-string">commit</span> <span class="hljs-string">-m</span> <span class="hljs-string">"Update documents"</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">git</span> <span class="hljs-string">push</span> <span class="hljs-string">--force</span>  <span class="hljs-string">"https://${GH_TOKEN}@${GH_REF}"</span> <span class="hljs-string">"master:${GH_BRANCH}"</span>
+<span class="hljs-attr">branches:</span>
+  <span class="hljs-attr">only:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">master</span>
+</code></pre>
+<h2 id="t389.React元素">9.React元素 <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t389.React%E5%85%83%E7%B4%A0"> # </a></h2>
+<p><img src="./珠峰架构师成长计划_files/DetailedReactHTMLElements.jpg" alt="DetailedReactHTMLElements.jpg"></p>
+<h3 id="t399.1 原生组件">9.1 原生组件 <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t399.1%20%E5%8E%9F%E7%94%9F%E7%BB%84%E4%BB%B6"> # </a></h3>
+<p>src\index.tsx</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> ReactDOM <span class="hljs-keyword">from</span> <span class="hljs-string">'react-dom'</span>;
+<span class="hljs-keyword">let</span> root: HTMLElement | <span class="hljs-literal">null</span> = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'root'</span>);
+interface Props {
+  <span class="hljs-attr">className</span>: string
+}
+<span class="hljs-keyword">let</span> props: Props = { <span class="hljs-attr">className</span>: <span class="hljs-string">'title'</span> };
+<span class="hljs-keyword">let</span> element: React.DetailedReactHTMLElement&lt;Props, HTMLDivElement&gt; = (
+  React.createElement&lt;Props, HTMLDivElement&gt;(<span class="hljs-string">'div'</span>, props, <span class="hljs-string">'hello'</span>)
+)
+ReactDOM.render(element, root);
+</code></pre>
+<p>src\typings.tsx</p>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> interface DOMAttributes {
+  children?: ReactNode;
+}
+<span class="hljs-keyword">export</span> interface HTMLAttributes extends DOMAttributes {
+  className?: string;
+}
+
+<span class="hljs-keyword">export</span> interface ReactElement&lt;P = any,T extends string&gt; {
+  <span class="hljs-attr">type</span>: T;
+  props: P;
+}
+<span class="hljs-keyword">export</span> interface DOMElement extends ReactElement{}
+<span class="hljs-keyword">export</span> interface ReactHTML { <span class="hljs-attr">div</span>:  HTMLDivElement }
+<span class="hljs-keyword">export</span> interface DetailedReactHTMLElement extends DOMElement{
+  <span class="hljs-attr">type</span>: keyof ReactHTML;
+}
+
+<span class="hljs-keyword">export</span> type ReactText = string | number;
+<span class="hljs-keyword">export</span> type ReactChild = ReactElement | ReactText;
+<span class="hljs-keyword">export</span> type ReactNode = ReactChild | boolean | <span class="hljs-literal">null</span> | <span class="hljs-literal">undefined</span>;
+
+<span class="hljs-keyword">export</span> declare <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createElement</span>&lt;<span class="hljs-title">P</span> <span class="hljs-title">extends</span> </span>{}&gt;(
+  type: string,
+  props?: P,
+  ...children: ReactNode[]): ReactElement;
+</code></pre>
+<h3 id="t409.2 函数组件">9.2 函数组件 <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t409.2%20%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6"> # </a></h3>
+<p>src\index.tsx</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> ReactDOM <span class="hljs-keyword">from</span> <span class="hljs-string">'react-dom'</span>;
+<span class="hljs-keyword">let</span> root: HTMLElement | <span class="hljs-literal">null</span> = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'root'</span>);
+interface Props {
+  <span class="hljs-attr">className</span>: string
+}
+<span class="hljs-keyword">let</span> props: Props = { <span class="hljs-attr">className</span>: <span class="hljs-string">'title'</span> };
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Welcome</span>(<span class="hljs-params">props: Props</span>):<span class="hljs-title">React</span>.<span class="hljs-title">DetailedReactHTMLElement</span>&lt;<span class="hljs-title">Props</span>, <span class="hljs-title">HTMLDivElement</span>&gt; </span>{
+  <span class="hljs-keyword">return</span> React.createElement&lt;Props, HTMLDivElement&gt;(<span class="hljs-string">'div'</span>, props, <span class="hljs-string">'hello'</span>);
+}
+<span class="hljs-keyword">let</span> element: React.FunctionComponentElement&lt;Props&gt; = (
+  React.createElement&lt;Props&gt;(Welcome, props)
+)
+ReactDOM.render(element, root);
+</code></pre>
+<p>src\typings.tsx</p>
+<pre><code class="lang-diff">export interface DOMAttributes {
+  children?: ReactNode;
+}
+export interface HTMLAttributes extends DOMAttributes {
+  className?: string;
+}
+<span class="hljs-addition">+export type JSXElementConstructor&lt;P&gt; = ((props: P) =&gt; ReactElement | null)</span>
+<span class="hljs-addition">+export interface ReactElement&lt;P = any, T extends string | JSXElementConstructor&lt;any&gt; = string&gt; {</span>
+  type: T;
+  props: P;
+}
+export interface DOMElement extends ReactElement{}
+export interface ReactHTML { div:  HTMLDivElement }
+export interface DetailedReactHTMLElement extends DOMElement{
+  type: keyof ReactHTML;
+}
+
+export type ReactText = string | number;
+export type ReactChild = ReactElement | ReactText;
+export type ReactNode = ReactChild | boolean | null | undefined;
+
+<span class="hljs-addition">+type PropsWithChildren&lt;P&gt; = P &amp; { children?: ReactNode };</span>
+<span class="hljs-addition">+interface FunctionComponent&lt;P = {}&gt; {</span>
+<span class="hljs-addition">+  (props: PropsWithChildren&lt;P&gt;): ReactElement | null;</span>
+<span class="hljs-addition">+}</span>
+<span class="hljs-addition">+interface FunctionComponentElement&lt;P&gt; extends ReactElement&lt;P, FunctionComponent&lt;P&gt;&gt; {}</span>
+<span class="hljs-addition">+export declare function createElement&lt;P extends {}&gt;(</span>
+<span class="hljs-addition">+  type: FunctionComponent&lt;P&gt;,</span>
+<span class="hljs-addition">+  props?: P,</span>
+<span class="hljs-addition">+  ...children: ReactNode[]): FunctionComponentElement&lt;P&gt;;</span>
+export declare function createElement&lt;P extends {}&gt;(
+  type: string,
+  props?: P,
+  ...children: ReactNode[]): ReactElement;
+</code></pre>
+<h3 id="t419.3 类组件">9.3 类组件 <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t419.3%20%E7%B1%BB%E7%BB%84%E4%BB%B6"> # </a></h3>
+<p>src\index.tsx</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> ReactDOM <span class="hljs-keyword">from</span> <span class="hljs-string">'react-dom'</span>;
+<span class="hljs-keyword">let</span> root: HTMLElement | <span class="hljs-literal">null</span> = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'root'</span>);
+interface Props {
+  <span class="hljs-attr">className</span>: string
+}
+interface State {
+  <span class="hljs-attr">count</span>:number
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Welcome</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span>&lt;<span class="hljs-title">Props</span>, <span class="hljs-title">State</span>&gt; </span>{
+  state = { <span class="hljs-attr">count</span>: <span class="hljs-number">0</span> }
+  render():React.DetailedReactHTMLElement&lt;Props, HTMLDivElement&gt; {
+    <span class="hljs-keyword">return</span> React.createElement&lt;Props, HTMLDivElement&gt;(<span class="hljs-string">'div'</span>, <span class="hljs-keyword">this</span>.props, <span class="hljs-keyword">this</span>.state.count);
+  }
+}
+<span class="hljs-keyword">let</span> props: Props = { <span class="hljs-attr">className</span>: <span class="hljs-string">'title'</span> };
+<span class="hljs-keyword">let</span> element = (
+  React.createElement&lt;Props&gt;(Welcome, props)
+)
+ReactDOM.render(element, root);
+</code></pre>
+<p>src\typings.tsx</p>
+<pre><code class="lang-diff">export interface DOMAttributes {
+  children?: ReactNode;
+}
+export interface HTMLAttributes extends DOMAttributes {
+  className?: string;
+}
+export type JSXElementConstructor&lt;P&gt; =  
+| ((props: P) =&gt; ReactElement | null)
+<span class="hljs-addition">+| (new (props: P) =&gt; Component&lt;P, any&gt;);</span>
+
+export interface ReactElement&lt;P = any, T extends string | JSXElementConstructor&lt;any&gt; = string&gt; {
+  type: T;
+  props: P;
+}
+export interface DOMElement extends ReactElement{}
+export interface ReactHTML { div:  HTMLDivElement }
+export interface DetailedReactHTMLElement extends DOMElement{
+  type: keyof ReactHTML;
+}
+
+export type ReactText = string | number;
+export type ReactChild = ReactElement | ReactText;
+export type ReactNode = ReactChild | boolean | null | undefined;
+
+type PropsWithChildren&lt;P&gt; = P &amp; { children?: ReactNode };
+interface FunctionComponent&lt;P = {}&gt; {
+  (props: PropsWithChildren&lt;P&gt;): ReactElement | null;
+}
+interface FunctionComponentElement&lt;P&gt; extends ReactElement&lt;P, FunctionComponent&lt;P&gt;&gt; {}
+
+<span class="hljs-addition">+type ComponentState = any;</span>
+<span class="hljs-addition">+declare class Component&lt;P, S&gt; {</span>
+<span class="hljs-addition">+  setState(state: any): void;</span>
+<span class="hljs-addition">+  render(): ReactNode;</span>
+<span class="hljs-addition">+}</span>
+<span class="hljs-addition">+interface ComponentClass&lt;P = {}, S = ComponentState&gt; {</span>
+<span class="hljs-addition">+  new(props: P): Component&lt;P, S&gt;;</span>
+<span class="hljs-addition">+}</span>
+<span class="hljs-addition">+interface ComponentElement&lt;P&gt; extends ReactElement&lt;P, ComponentClass&lt;P&gt;&gt; {}</span>
+<span class="hljs-addition">+export declare function createElement&lt;P extends {}&gt;(</span>
+<span class="hljs-addition">+  type:  ComponentClass&lt;P&gt;,</span>
+<span class="hljs-addition">+  props?: P,</span>
+<span class="hljs-addition">+  ...children: ReactNode[]): ComponentElement&lt;P&gt;;</span>
+export declare function createElement&lt;P extends {}&gt;(
+  type: FunctionComponent&lt;P&gt;,
+  props?: P,
+  ...children: ReactNode[]): FunctionComponentElement&lt;P&gt;;
+export declare function createElement&lt;P extends {}&gt;(
+  type: string,
+  props?: P,
+  ...children: ReactNode[]): ReactElement;
+</code></pre>
+<h2 id="t4210. 创建组件">10. 创建组件 <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t4210.%20%E5%88%9B%E5%BB%BA%E7%BB%84%E4%BB%B6"> # </a></h2>
+<h3 id="t4310.1 Counter.tsx">10.1 Counter.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t4310.1%20Counter.tsx"> # </a></h3>
+<p>src\components\Counter.tsx</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">export</span> interface Props {
+    <span class="hljs-attr">number</span>: number
+}
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Counter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span>&lt;<span class="hljs-title">Props</span>&gt;</span>{
+    render() {
+        <span class="hljs-keyword">const</span> { number } = <span class="hljs-keyword">this</span>.props;
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>{number}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+        )
+    }
+}
+</code></pre>
+<h3 id="t4410.2 types.tsx">10.2 types.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t4410.2%20types.tsx"> # </a></h3>
+<p>src\components\Todos\types.tsx</p>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> type Todo = {
+    <span class="hljs-attr">id</span>:number;
+    text:string
+}
+</code></pre>
+<h3 id="t4510.3 TodoItem.tsx">10.3 TodoItem.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t4510.3%20TodoItem.tsx"> # </a></h3>
+<p>src\components\Todos\TodoItem.tsx</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">"react"</span>;
+<span class="hljs-keyword">import</span> { Todo } <span class="hljs-keyword">from</span> <span class="hljs-string">'./types'</span>;
+<span class="hljs-keyword">const</span> todoItemStyle: React.CSSProperties = {
+  <span class="hljs-attr">color</span>: <span class="hljs-string">"red"</span>,
+  <span class="hljs-attr">backgroundColor</span>: <span class="hljs-string">"green"</span>,
+};
+interface Props {
+  <span class="hljs-attr">todo</span>: Todo;
+}
+<span class="hljs-keyword">const</span> TodoItem: React.FC&lt;Props&gt; = <span class="hljs-function">(<span class="hljs-params">props: Props</span>) =&gt;</span> (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{todoItemStyle}</span>&gt;</span>{props.todo.text}<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></span>
+);
+TodoItem.defaultProps;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> TodoItem;
+</code></pre>
+<h3 id="t4610.4 TodoInput.tsx">10.4 TodoInput.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t4610.4%20TodoInput.tsx"> # </a></h3>
+<p>src\components\Todos\TodoInput.tsx</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">"react"</span>;
+<span class="hljs-keyword">import</span> { Todo } <span class="hljs-keyword">from</span> <span class="hljs-string">'./types'</span>;
+interface Props {
+  <span class="hljs-attr">addTodo</span>:<span class="hljs-function">(<span class="hljs-params">todo:Todo</span>)=&gt;</span><span class="hljs-keyword">void</span>
+}
+interface State {
+  <span class="hljs-attr">text</span>:string
+}
+<span class="hljs-keyword">let</span> id=<span class="hljs-number">0</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TodoInput</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span>&lt;<span class="hljs-title">Props</span>, <span class="hljs-title">State</span>&gt; </span>{
+  <span class="hljs-keyword">constructor</span>(props: Props) {
+    <span class="hljs-keyword">super</span>(props);
+    <span class="hljs-keyword">this</span>.state = {
+      <span class="hljs-attr">text</span>: <span class="hljs-string">""</span>,
+    };
+  }
+  public render() {
+    <span class="hljs-keyword">const</span> { text } = <span class="hljs-keyword">this</span>.state;
+    <span class="hljs-keyword">const</span> { handleChange, handleSubmit } = <span class="hljs-keyword">this</span>;
+
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">onSubmit</span>=<span class="hljs-string">{handleSubmit}</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">{text}</span> <span class="hljs-attr">onChange</span>=<span class="hljs-string">{this.handleChange}</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span>&gt;</span>添加<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span></span>
+    );
+  }
+
+  handleChange = <span class="hljs-function">(<span class="hljs-params">e: React.ChangeEvent&lt;HTMLInputElement&gt;</span>) =&gt;</span> {
+    <span class="hljs-keyword">this</span>.setState({ <span class="hljs-attr">text</span>: e.target.value });
+  }
+
+  handleSubmit = <span class="hljs-function">(<span class="hljs-params">e: React.FormEvent&lt;HTMLFormElement&gt;</span>) =&gt;</span> {
+    e.preventDefault();
+    <span class="hljs-keyword">let</span> text = <span class="hljs-keyword">this</span>.state.text.trim();
+    <span class="hljs-keyword">if</span> (!text) {
+      <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-keyword">this</span>.props.addTodo({<span class="hljs-attr">id</span>:id++,text});
+    <span class="hljs-keyword">this</span>.setState({ <span class="hljs-attr">text</span>: <span class="hljs-string">""</span> });
+  }
+}
+</code></pre>
+<h3 id="t4710.5 Todos\index.tsx">10.5 Todos\index.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t4710.5%20Todos\index.tsx"> # </a></h3>
+<p>src\components\Todos\index.tsx</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> TodoInput <span class="hljs-keyword">from</span> <span class="hljs-string">'./TodoInput'</span>;
+<span class="hljs-keyword">import</span> TodoItem <span class="hljs-keyword">from</span> <span class="hljs-string">'./TodoItem'</span>;
+<span class="hljs-keyword">import</span> { Todo} <span class="hljs-keyword">from</span> <span class="hljs-string">'./types'</span>;
+<span class="hljs-keyword">const</span> ulStyle: React.CSSProperties = {
+  <span class="hljs-attr">width</span>: <span class="hljs-string">"100px"</span>
+};
+<span class="hljs-keyword">export</span> interface Props {
+  <span class="hljs-attr">title</span>:string
+}
+<span class="hljs-keyword">export</span> interface State {
+  <span class="hljs-attr">todos</span>: Todo[]
+}
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Todos</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span>&lt;<span class="hljs-title">Props</span>,<span class="hljs-title">State</span>&gt;</span>{
+  state = {<span class="hljs-attr">todos</span>:<span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>&lt;Todo&gt;()};
+  addTodo = <span class="hljs-function">(<span class="hljs-params">todo:Todo</span>) =&gt;</span>{
+    <span class="hljs-keyword">this</span>.setState({<span class="hljs-attr">todos</span>:[...this.state.todos,todo]});
+  }
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>{this.props.title}<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">TodoInput</span> <span class="hljs-attr">addTodo</span>=<span class="hljs-string">{this.addTodo}/</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{ulStyle}</span>&gt;</span>
+          {
+            this.state.todos.map(todo=&gt;<span class="hljs-tag">&lt;<span class="hljs-name">TodoItem</span> <span class="hljs-attr">key</span>=<span class="hljs-string">{todo.id}</span> <span class="hljs-attr">todo</span>=<span class="hljs-string">{todo}/</span>&gt;</span>)
+          }
+        <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+    )
+  }
+}
+</code></pre>
+<h3 id="t4810.6 src\index.tsx">10.6 src\index.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t4810.6%20src\index.tsx"> # </a></h3>
+<p>src\index.tsx</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">"react"</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> ReactDOM <span class="hljs-keyword">from</span> <span class="hljs-string">"react-dom"</span>;
+<span class="hljs-keyword">import</span> Counter <span class="hljs-keyword">from</span> <span class="hljs-string">"./components/Counter"</span>;
+<span class="hljs-keyword">import</span> Todos <span class="hljs-keyword">from</span> <span class="hljs-string">"./components/Todos"</span>;
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">Counter</span> <span class="hljs-attr">number</span>=<span class="hljs-string">{100}</span> /&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">Todos</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"待办事项"</span>/&gt;</span><span class="hljs-tag">&lt;/&gt;</span></span>, <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"root"</span>));
+</code></pre>
+<h2 id="t4911. 默认属性">11. 默认属性 <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t4911.%20%E9%BB%98%E8%AE%A4%E5%B1%9E%E6%80%A7"> # </a></h2>
+<h3 id="t5011.1 TodoInput.tsx">11.1 TodoInput.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t5011.1%20TodoInput.tsx"> # </a></h3>
+<p>src\components\Todos\TodoInput.tsx</p>
+<pre><code class="lang-diff">import * as React from "react";
+import { Todo } from './types';
+
+<span class="hljs-addition">+let defaultProps = {</span>
+<span class="hljs-addition">+  setting:{</span>
+<span class="hljs-addition">+    maxLength: 6,</span>
+<span class="hljs-addition">+    placeholder: '请输入待办事项'</span>
+<span class="hljs-addition">+  }</span>
+<span class="hljs-addition">+}</span>
+<span class="hljs-addition">+export type DefaultProps = Partial&lt;typeof defaultProps&gt;;</span>
+<span class="hljs-addition">+interface OwnProps {</span>
+<span class="hljs-addition">+  addTodo:(todo:Todo)=&gt;void</span>
+<span class="hljs-addition">+}</span>
+<span class="hljs-addition">+type Props = OwnProps &amp; DefaultProps;</span>
+interface State {
+  text:string
+}
+let id=0;
+export default class TodoInput extends React.Component&lt;Props, State&gt; {
+<span class="hljs-addition">+  static defaultProps: Required&lt;DefaultProps&gt; = defaultProps;</span>
+  constructor(props: Props) {
+    super(props);
+    this.state = {
+      text: ""
+    };
+  }
+  public render() {
+    const { text } = this.state;
+<span class="hljs-addition">+   const { setting } = this.props as (Props &amp; Required&lt;DefaultProps&gt;);</span>
+    const { handleChange, handleSubmit } = this;
+    return (
+      &lt;form onSubmit={handleSubmit}&gt;
+<span class="hljs-addition">+       &lt;input type="text" maxLength={setting.maxLength} placeholder={setting.placeholder} </span>
+        value={text} onChange={handleChange} /&gt;
+        &lt;button type="submit"&gt;添加&lt;/button&gt;
+      &lt;/form&gt;
+    );
+  }
+
+  handleChange = (e: React.ChangeEvent&lt;HTMLInputElement&gt;) =&gt; {
+    this.setState({ text: e.target.value });
+  }
+
+  handleSubmit = (e: React.FormEvent&lt;HTMLFormElement&gt;) =&gt; {
+    e.preventDefault();
+    let text = this.state.text.trim();
+    if (!text) {
+      return;
+    }
+    this.props.addTodo({id:id++,text});
+    this.setState({ text: "" });
+  }
+}
+</code></pre>
+<h2 id="t5112. 高阶组件">12. 高阶组件 <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t5112.%20%E9%AB%98%E9%98%B6%E7%BB%84%E4%BB%B6"> # </a></h2>
+<h3 id="t5212.1 安装">12.1 安装 <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t5212.1%20%E5%AE%89%E8%A3%85"> # </a></h3>
+<pre><code class="lang-js">cnpm i hoist-non-react-statics -S
+</code></pre>
+<h3 id="t5312.2 src\utils.tsx">12.2 src\utils.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t5312.2%20src\utils.tsx"> # </a></h3>
+<p>src\utils.tsx</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span>  hoistNonReactStatics <span class="hljs-keyword">from</span> <span class="hljs-string">'hoist-non-react-statics'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> defaultProps = {
+  <span class="hljs-attr">setting</span>: {
+    <span class="hljs-attr">maxLength</span>: <span class="hljs-number">6</span>,
+    <span class="hljs-attr">placeholder</span>: <span class="hljs-string">'请输入待办事项'</span>
+  }
+}
+
+<span class="hljs-keyword">export</span> type DefaultProps = Partial&lt;<span class="hljs-keyword">typeof</span> defaultProps&gt;;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> withDefaultInputProps =  &lt;Props extends DefaultProps&gt;(OldComponent: React.ComponentType&lt;Props&gt;) =&gt; {
+  type OwnProps = Omit&lt;Props, keyof DefaultProps&gt;; 
+  class NewComponent extends React.Component&lt;OwnProps&gt; {
+     public render() {
+       let props = { ...defaultProps, ...this.props} as Props;
+       return (
+         &lt;OldComponent {...props} /&gt;
+       );
+     }
+  }
+  return hoistNonReactStatics(NewComponent, OldComponent);
+};
+</code></pre>
+<h3 id="t5412.3 TodoInput.tsx">12.3 TodoInput.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t5412.3%20TodoInput.tsx"> # </a></h3>
+<p>src\components\Todos\TodoInput.tsx</p>
+<pre><code class="lang-diff">import * as React from "react";
+import { Todo } from './types';
+<span class="hljs-addition">+import {withDefaultInputProps,DefaultProps } from '@/utils';</span>
+interface OwnProps {
+  addTodo:(todo:Todo)=&gt;void
+}
+type Props = OwnProps &amp; DefaultProps;
+interface State {
+  text:string
+}
+let id=0;
+class TodoInput extends React.Component&lt;Props, State&gt; {
+  constructor(props: Props) {
+    super(props);
+    this.state = {
+      text: ""
+    };
+  }
+  public render() {
+    const { text } = this.state;
+    const { setting } = this.props as (Props &amp; Required&lt;DefaultProps&gt;);
+    const { handleChange, handleSubmit } = this;
+    return (
+      &lt;form onSubmit={handleSubmit}&gt;
+        &lt;input type="text" maxLength={setting.maxLength} placeholder={setting.placeholder} 
+        value={text} onChange={handleChange} /&gt;
+        &lt;button type="submit"&gt;添加&lt;/button&gt;
+      &lt;/form&gt;
+    );
+  }
+
+  handleChange = (e: React.ChangeEvent&lt;HTMLInputElement&gt;) =&gt; {
+    this.setState({ text: e.target.value });
+  }
+
+  handleSubmit = (e: React.FormEvent&lt;HTMLFormElement&gt;) =&gt; {
+    e.preventDefault();
+    let text = this.state.text.trim();
+    if (!text) {
+      return;
+    }
+    this.props.addTodo({id:id++,text});
+    this.setState({ text: "" });
+  }
+}
+<span class="hljs-addition">+ export default withDefaultInputProps&lt;Props&gt;(TodoInput);</span>
+</code></pre>
+<h3 id="t5512.4 src\hoistNonReactStatics.tsx">12.4 src\hoistNonReactStatics.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t5512.4%20src\hoistNonReactStatics.tsx"> # </a></h3>
+<p>src\hoistNonReactStatics.tsx</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">"react"</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hoistNonReactStatics</span>&lt;<span class="hljs-title">T</span> <span class="hljs-title">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">ComponentType</span>&lt;<span class="hljs-title">any</span>&gt;,<span class="hljs-title">S</span> <span class="hljs-title">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">ComponentType</span>&lt;<span class="hljs-title">any</span>&gt;
+&gt;(<span class="hljs-params">
+  TargetComponent: T,
+  SourceComponent: S
+</span>): <span class="hljs-title">T</span> &amp; <span class="hljs-title">S</span>;
+<span class="hljs-title">function</span> <span class="hljs-title">hoistNonReactStatics</span>&lt;<span class="hljs-title">T</span> <span class="hljs-title">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">ComponentType</span>&lt;<span class="hljs-title">any</span>&gt;, <span class="hljs-title">S</span> <span class="hljs-title">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">ComponentType</span>&lt;<span class="hljs-title">any</span>&gt;&gt;
+(<span class="hljs-params">targetComponent:T , sourceComponent: S</span>):<span class="hljs-title">T</span>&amp;<span class="hljs-title">S</span> </span>{
+  <span class="hljs-keyword">let</span> keys = <span class="hljs-built_in">Object</span>.getOwnPropertyNames(sourceComponent);
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; keys.length; ++i) {
+    <span class="hljs-keyword">const</span> key = keys[i];
+    <span class="hljs-keyword">const</span> descriptor = <span class="hljs-built_in">Object</span>.getOwnPropertyDescriptor(sourceComponent, key);
+    <span class="hljs-built_in">Object</span>.defineProperty(targetComponent, key, descriptor!);
+  }
+  <span class="hljs-keyword">return</span> targetComponent <span class="hljs-keyword">as</span> T&amp;S;
+}
+interface Props{}
+interface State{}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Old</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span>&lt;<span class="hljs-title">Props</span>, <span class="hljs-title">State</span>&gt; </span>{
+  <span class="hljs-keyword">static</span> age1: number = <span class="hljs-number">10</span>;
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">New</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span>&lt;<span class="hljs-title">Props</span>, <span class="hljs-title">State</span>&gt; </span>{
+  <span class="hljs-keyword">static</span> age2: number = <span class="hljs-number">10</span>;
+}
+<span class="hljs-keyword">let</span> c = hoistNonReactStatics&lt;<span class="hljs-keyword">typeof</span> New, <span class="hljs-keyword">typeof</span>  Old&gt;(New, Old);
+c.age1;
+c.age2;
+</code></pre>
+<h2 id="t5613. 集成redux">13. 集成redux <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t5613.%20%E9%9B%86%E6%88%90redux"> # </a></h2>
+<h3 id="t5713.1 models\todos.tsx">13.1 models\todos.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t5713.1%20models\todos.tsx"> # </a></h3>
+<p>src\models\todos.tsx</p>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> type Todo = {
+    <span class="hljs-attr">id</span>: number;
+    text: string
+}
+</code></pre>
+<h3 id="t5813.2 models\index.tsx">13.2 models\index.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t5813.2%20models\index.tsx"> # </a></h3>
+<p>src\models\index.tsx</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { Todo} <span class="hljs-keyword">from</span> <span class="hljs-string">'./todos'</span>;
+<span class="hljs-keyword">export</span> {
+    Todo
+}
+</code></pre>
+<h3 id="t5913.3 action-types.tsx">13.3 action-types.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t5913.3%20action-types.tsx"> # </a></h3>
+<p>src\store\action-types.tsx</p>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> ADD = <span class="hljs-string">'ADD'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> MINUS = <span class="hljs-string">'MINUS'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> ADD_TODO = <span class="hljs-string">'ADD_TODO'</span>;
+</code></pre>
+<h3 id="t6013.4 reducers\counter.tsx">13.4 reducers\counter.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t6013.4%20reducers\counter.tsx"> # </a></h3>
+<p>src\store\reducers\counter.tsx</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> types <span class="hljs-keyword">from</span> <span class="hljs-string">'../action-types'</span>;
+<span class="hljs-keyword">import</span> { Action } <span class="hljs-keyword">from</span> <span class="hljs-string">'../actions'</span>;
+<span class="hljs-keyword">export</span> interface CounterState{
+    <span class="hljs-attr">number</span>:number;
+}
+<span class="hljs-keyword">let</span> initialState: CounterState = { <span class="hljs-attr">number</span>: <span class="hljs-number">0</span> };
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">state: CounterState = initialState, action: Action</span>): <span class="hljs-title">CounterState</span> </span>{
+    <span class="hljs-keyword">switch</span> (action.type) {
+        <span class="hljs-keyword">case</span> types.ADD:
+            <span class="hljs-keyword">return</span> { ...state, <span class="hljs-attr">number</span>: state.number + <span class="hljs-number">1</span> };
+        <span class="hljs-keyword">case</span> types.MINUS:
+            <span class="hljs-keyword">return</span> { ...state, <span class="hljs-attr">number</span>: state.number - <span class="hljs-number">1</span> };
+        <span class="hljs-keyword">default</span>:
+            <span class="hljs-keyword">return</span> state;
+    }
+}
+</code></pre>
+<h3 id="t6113.5 reducers\todos.tsx">13.5 reducers\todos.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t6113.5%20reducers\todos.tsx"> # </a></h3>
+<p>src\store\reducers\todos.tsx</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { ADD_TODO} <span class="hljs-keyword">from</span> <span class="hljs-string">'../action-types'</span>;
+<span class="hljs-keyword">import</span> { Action } <span class="hljs-keyword">from</span> <span class="hljs-string">'../actions'</span>;
+<span class="hljs-keyword">import</span> { Todo} <span class="hljs-keyword">from</span> <span class="hljs-string">'../../models'</span>;
+<span class="hljs-keyword">export</span> interface TodosState {
+    <span class="hljs-attr">list</span>: <span class="hljs-built_in">Array</span>&lt;Todo&gt;;
+}
+<span class="hljs-keyword">let</span> initialState: TodosState = { <span class="hljs-attr">list</span>: <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>&lt;Todo&gt;()};
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">state: TodosState = initialState, action: Action</span>): <span class="hljs-title">TodosState</span> </span>{
+    <span class="hljs-keyword">switch</span> (action.type) {
+        <span class="hljs-keyword">case</span> ADD_TODO:
+            <span class="hljs-keyword">return</span> { <span class="hljs-attr">list</span>: [...state.list,action.payload]};
+        <span class="hljs-keyword">default</span>:
+            <span class="hljs-keyword">return</span> state;
+    }
+}
+</code></pre>
+<h3 id="t6213.6 reducers\index.tsx">13.6 reducers\index.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t6213.6%20reducers\index.tsx"> # </a></h3>
+<p>src\store\reducers\index.tsx</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> counter, { CounterState} <span class="hljs-keyword">from</span> <span class="hljs-string">'./counter'</span>;
+<span class="hljs-keyword">import</span> todos,{TodosState} <span class="hljs-keyword">from</span> <span class="hljs-string">'./todos'</span>;
+<span class="hljs-keyword">import</span> { combineReducers } <span class="hljs-keyword">from</span> <span class="hljs-string">'redux'</span>;
+<span class="hljs-keyword">let</span> reducers = {
+    counter,
+    todos
+};
+type ReducersType = <span class="hljs-keyword">typeof</span> reducers;
+type CombinedState = {
+    [key <span class="hljs-keyword">in</span> keyof ReducersType]: ReturnType&lt;ReducersType[key]&gt;
+}
+<span class="hljs-keyword">export</span> { CombinedState, CounterState, TodosState}
+
+<span class="hljs-keyword">let</span> combinedReducer = combineReducers(reducers);
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> combinedReducer;
+</code></pre>
+<h3 id="t6313.7 actions\counter.tsx">13.7 actions\counter.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t6313.7%20actions\counter.tsx"> # </a></h3>
+<p>src\store\actions\counter.tsx</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { ADD, MINUS } <span class="hljs-keyword">from</span> <span class="hljs-string">'../action-types'</span>;
+<span class="hljs-keyword">export</span> interface AddAction {
+    <span class="hljs-attr">type</span>: <span class="hljs-keyword">typeof</span> ADD
+}
+<span class="hljs-keyword">export</span> interface MinusAction {
+    <span class="hljs-attr">type</span>: <span class="hljs-keyword">typeof</span> MINUS
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params"></span>): <span class="hljs-title">AddAction</span> </span>{
+    <span class="hljs-keyword">return</span> { <span class="hljs-attr">type</span>: ADD };
+}
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">minus</span>(<span class="hljs-params"></span>): <span class="hljs-title">MinusAction</span> </span>{
+    <span class="hljs-keyword">return</span> { <span class="hljs-attr">type</span>: MINUS };
+}
+</code></pre>
+<h3 id="t6413.8 actions\todos.tsx">13.8 actions\todos.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t6413.8%20actions\todos.tsx"> # </a></h3>
+<p>src\store\actions\todos.tsx</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { ADD_TODO } <span class="hljs-keyword">from</span> <span class="hljs-string">'../action-types'</span>;
+<span class="hljs-keyword">import</span> { Todo} <span class="hljs-keyword">from</span> <span class="hljs-string">'@/models'</span>;
+<span class="hljs-keyword">export</span> interface AddTodoAction {
+    <span class="hljs-attr">type</span>: <span class="hljs-keyword">typeof</span> ADD_TODO,
+    <span class="hljs-attr">payload</span>:Todo
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addTodo</span>(<span class="hljs-params">todo:Todo</span>): <span class="hljs-title">AddTodoAction</span> </span>{
+    <span class="hljs-keyword">return</span> { <span class="hljs-attr">type</span>: ADD_TODO,<span class="hljs-attr">payload</span>:todo };
+}
+</code></pre>
+<h3 id="t6513.9 actions\index.tsx">13.9 actions\index.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t6513.9%20actions\index.tsx"> # </a></h3>
+<p>src\store\actions\index.tsx</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { AddAction,MinusAction} <span class="hljs-keyword">from</span> <span class="hljs-string">'./counter'</span>;
+<span class="hljs-keyword">import</span> { AddTodoAction } <span class="hljs-keyword">from</span> <span class="hljs-string">'./todos'</span>;
+<span class="hljs-keyword">export</span> type Action = AddAction | MinusAction | AddTodoAction;
+</code></pre>
+<h3 id="t6613.10 components\Counter.tsx">13.10 components\Counter.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t6613.10%20components\Counter.tsx"> # </a></h3>
+<p>src\components\Counter.tsx</p>
+<pre><code class="lang-diff">import * as React from 'react';
+<span class="hljs-addition">+import { connect } from 'react-redux';</span>
+<span class="hljs-addition">+import { CombinedState, CounterState } from '../store/reducers';</span>
+<span class="hljs-addition">+import * as actions from '@/store/actions/counter';</span>
+<span class="hljs-addition">+type StateProps = ReturnType&lt;typeof mapStateToProps&gt;;</span>
+<span class="hljs-addition">+type DispatchProps = typeof actions;</span>
+<span class="hljs-addition">+type Props = StateProps &amp; DispatchProps;</span>
+
+class Counter extends React.Component&lt;Props&gt;{
+    render() {
+        const { number } = this.props;
+        return (
+            &lt;div&gt;
+                &lt;p&gt;{number}&lt;/p&gt;
+                &lt;button onClick={()=&gt;this.props.add()}&gt;+&lt;/button&gt;
+            &lt;/div&gt;
+        )
+    }
+}
+
+<span class="hljs-addition">+let mapStateToProps = function (state: CombinedState): CounterState {</span>
+<span class="hljs-addition">+    return state.counter;</span>
+<span class="hljs-addition">+}</span>
+
+<span class="hljs-addition">+export default connect(mapStateToProps, actions)(Counter);</span>
+</code></pre>
+<h3 id="t6713.11 TodoItem.tsx">13.11 TodoItem.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t6713.11%20TodoItem.tsx"> # </a></h3>
+<p>src\components\Todos\TodoItem.tsx</p>
+<pre><code class="lang-diff">import * as React from "react";
+<span class="hljs-addition">+import { Todo } from '@/models';</span>
+const todoItemStyle: React.CSSProperties = {
+  color: "red",
+  backgroundColor: "green",
+};
+interface Props {
+  todo: Todo;
+}
+const TodoItem: React.FC&lt;Props&gt; = (props: Props) =&gt; (
+  &lt;li style={todoItemStyle}&gt;{props.todo.text}&lt;/li&gt;
+);
+TodoItem.defaultProps;
+
+export default TodoItem;
+
+</code></pre>
+<h3 id="t6813.12 TodoInput.tsx">13.12 TodoInput.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t6813.12%20TodoInput.tsx"> # </a></h3>
+<p>src\components\Todos\TodoInput.tsx</p>
+<pre><code class="lang-diff">import * as React from "react";
+<span class="hljs-addition">+import { Todo } from '@/models';</span>
+import { withDefaultInputProps,DefaultProps } from '@/utils';
+interface OwnProps {
+  addTodo:(todo:Todo)=&gt;void
+}
+type Props = OwnProps &amp; DefaultProps;
+interface State {
+  text:string
+}
+let id=0;
+
+class TodoInput extends React.Component&lt;Props, State&gt; {
+  static age:number = 10;
+  constructor(props: Props) {
+    super(props);
+    this.state = {
+      text: ""
+    };
+  }
+  public render() {
+    const { text } = this.state;
+    const { setting } = this.props as Props &amp; Required&lt;DefaultProps&gt;;
+    const { handleChange, handleSubmit } = this;
+    return (
+      &lt;form onSubmit={handleSubmit}&gt;
+        &lt;input type="text" maxLength={setting.maxLength} placeholder={setting.placeholder} 
+        value={text} onChange={handleChange} /&gt;
+        &lt;button type="submit"&gt;添加&lt;/button&gt;
+      &lt;/form&gt;
+    );
+  }
+
+  handleChange = (e: React.ChangeEvent&lt;HTMLInputElement&gt;) =&gt; {
+    this.setState({ text: e.target.value });
+  }
+
+  handleSubmit = (e: React.FormEvent&lt;HTMLFormElement&gt;) =&gt; {
+    e.preventDefault();
+    let text = this.state.text.trim();
+    if (!text) {
+      return;
+    }
+    this.props.addTodo({id:id++,text});
+    this.setState({ text: "" });
+  }
+}
+export default withDefaultInputProps&lt;Props&gt;(TodoInput);
+</code></pre>
+<h3 id="t6913.13 Todos\index.tsx">13.13 Todos\index.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t6913.13%20Todos\index.tsx"> # </a></h3>
+<p>src\components\Todos\index.tsx</p>
+<pre><code class="lang-diff">import * as React from 'react';
+import TodoInput from './TodoInput';
+import TodoItem from './TodoItem';
+<span class="hljs-addition">+import { Todo} from '@/models';</span>
+<span class="hljs-addition">+import { CombinedState,TodosState  } from '@/store/reducers';</span>
+<span class="hljs-addition">+import * as actions from '@/store/actions/todos';</span>
+<span class="hljs-addition">+import {connect} from 'react-redux';</span>
+<span class="hljs-addition">+const ulStyle: React.CSSProperties = {</span>
+<span class="hljs-addition">+  width: "100px"</span>
+<span class="hljs-addition">+};</span>
+<span class="hljs-addition">+type StateProps = ReturnType&lt;typeof mapStateToProps&gt;;</span>
+<span class="hljs-addition">+type DispatchProps = typeof actions;</span>
+<span class="hljs-addition">+type Props = StateProps &amp; DispatchProps;</span>
+export interface State {
+  todos: Todo[]
+}
+class Todos extends React.Component&lt;Props,State&gt;{
+  addTodo = (todo:Todo) =&gt;{
+    this.props.addTodo(todo);
+  }
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;TodoInput addTodo={this.addTodo}/&gt;
+        &lt;ul style={ulStyle}&gt;
+          {
+            this.props.list.map(todo=&gt;&lt;TodoItem key={todo.id} todo={todo}/&gt;)
+          }
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+<span class="hljs-addition">+let mapStateToProps = function (state: CombinedState): TodosState {</span>
+<span class="hljs-addition">+  return state.todos;</span>
+<span class="hljs-addition">+}</span>
+<span class="hljs-addition">+export default connect(mapStateToProps, actions)(Todos);</span>
+</code></pre>
+<h3 id="t7013.14 store\index.tsx">13.14 store\index.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t7013.14%20store\index.tsx"> # </a></h3>
+<p>src\store\index.tsx</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { createStore } <span class="hljs-keyword">from</span> <span class="hljs-string">'redux'</span>
+<span class="hljs-keyword">import</span> combinedReducer <span class="hljs-keyword">from</span> <span class="hljs-string">'./reducers'</span>;
+<span class="hljs-keyword">let</span> store = createStore(combinedReducer);
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> store;
+</code></pre>
+<h3 id="t7113.15 src\index.tsx">13.15 src\index.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t7113.15%20src\index.tsx"> # </a></h3>
+<p>src\index.tsx</p>
+<pre><code class="lang-diff">import * as React from "react";
+import * as ReactDOM from "react-dom";
+import Counter from "./components/Counter";
+import Todos from "./components/Todos";
+<span class="hljs-addition">+import { Provider } from 'react-redux';</span>
+<span class="hljs-addition">+import store from './store';</span>
+<span class="hljs-addition">+ReactDOM.render(</span>
+<span class="hljs-addition">+&lt;Provider store={store}&gt;</span>
+<span class="hljs-addition">+    &lt;React.Fragment&gt;</span>
+<span class="hljs-addition">+        &lt;Counter /&gt;</span>
+<span class="hljs-addition">+        &lt;hr/&gt;</span>
+<span class="hljs-addition">+        &lt;Todos /&gt;</span>
+<span class="hljs-addition">+    &lt;/React.Fragment&gt;</span>
+<span class="hljs-addition">+&lt;/Provider&gt;, document.getElementById("root"));</span>
+</code></pre>
+<h2 id="t7214. 使用路由">14. 使用路由 <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t7214.%20%E4%BD%BF%E7%94%A8%E8%B7%AF%E7%94%B1"> # </a></h2>
+<h3 id="t7314.1 src\index.tsx">14.1 src\index.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t7314.1%20src\index.tsx"> # </a></h3>
+<p>src\index.tsx</p>
+<pre><code class="lang-diff">import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import Counter from './components/Counter';
+import Todos from './components/Todos';
+import { Provider } from 'react-redux';
+import store from './store';
+<span class="hljs-addition">+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';</span>
+ReactDOM.render((
+    &lt;Provider store={store}&gt;
+        &lt;Router &gt;
+            &lt;React.Fragment&gt;
+<span class="hljs-addition">+                &lt;ul&gt;</span>
+<span class="hljs-addition">+                    &lt;li&gt;&lt;Link to="/counter/counterName"&gt;counter&lt;/Link&gt;&lt;/li&gt;</span>
+<span class="hljs-addition">+                    &lt;li&gt;&lt;Link to={{ pathname: "/todos", state: { name: 'todoName' } }}&gt;todos&lt;/Link&gt;&lt;/+li&gt;</span>
+<span class="hljs-addition">+                &lt;/ul&gt;</span>
+<span class="hljs-addition">+                &lt;Route path="/counter/:name" component={Counter} /&gt;</span>
+<span class="hljs-addition">+                &lt;Route path="/todos" component={Todos} /&gt;</span>
+            &lt;/React.Fragment&gt;
+        &lt;/Router&gt;
+
+    &lt;/Provider&gt;
+), document.getElementById('root'));
+</code></pre>
+<h3 id="t7414.2 Counter.tsx">14.2 Counter.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t7414.2%20Counter.tsx"> # </a></h3>
+<p>src\components\Counter.tsx</p>
+<pre><code class="lang-diff">import * as React from 'react';
+import { connect } from 'react-redux';
+import { CombinedState, CounterState } from '../store/reducers';
+<span class="hljs-addition">+import * as actions from '@/store/actions/counter';</span>
+<span class="hljs-addition">+import { RouteComponentProps } from 'react-router-dom';</span>
+<span class="hljs-addition">+import { StaticContext} from 'react-router';</span>
+<span class="hljs-addition">+type StateProps = ReturnType&lt;typeof mapStateToProps&gt;;</span>
+<span class="hljs-addition">+type DispatchProps = typeof actions;</span>
+<span class="hljs-addition">+interface Params { name:string}</span>
+<span class="hljs-addition">+interface LocationState { }</span>
+<span class="hljs-addition">+type Props = StateProps &amp; DispatchProps &amp; RouteComponentProps&lt;Params, StaticContext,LocationState&gt;;</span>
+
+class Counter extends React.Component&lt;Props&gt;{
+    render() {
+<span class="hljs-addition">+        const { name} = this.props.match.params;</span>
+        const { number } = this.props;
+        return (
+            &lt;div&gt;
+<span class="hljs-addition">+                &lt;p&gt;名称:{name}&lt;/p&gt;</span>
+                &lt;p&gt;{number}&lt;/p&gt;
+                &lt;button onClick={()=&gt;this.props.add()}&gt;+&lt;/button&gt;
+                &lt;button onClick={() =&gt; this.props.history.push({ pathname: "/todos", state: { todoName: 'todoName' } })}&gt;/todos&lt;/button&gt;
+            &lt;/div&gt;
+        )
+    }
+}
+
+let mapStateToProps = function (state: CombinedState): CounterState {
+    return state.counter;
+}
+
+export default connect(mapStateToProps, actions)(Counter);
+</code></pre>
+<h3 id="t7514.3 Todos\index.tsx">14.3 Todos\index.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t7514.3%20Todos\index.tsx"> # </a></h3>
+<p>src\components\Todos\index.tsx</p>
+<pre><code class="lang-diff">import * as React from 'react';
+import TodoInput from './TodoInput';
+import TodoItem from './TodoItem';
+import { Todo} from '@/models';
+<span class="hljs-addition">+import { CombinedState, CounterState, TodosState } from '@/store/reducers';</span>
+<span class="hljs-addition">+import { RouteComponentProps } from 'react-router-dom';</span>
+<span class="hljs-addition">+import { StaticContext } from 'react-router';</span>
+<span class="hljs-addition">+import * as actions from '@/store/actions/todos';</span>
+<span class="hljs-addition">+import { connect } from 'react-redux';</span>
+<span class="hljs-addition">+type StateProps = ReturnType&lt;typeof mapStateToProps&gt;;</span>
+<span class="hljs-addition">+type DispatchProps = typeof actions;</span>
+<span class="hljs-addition">+const ulStyle: React.CSSProperties = {</span>
+<span class="hljs-addition">+    width: "100px"</span>
+<span class="hljs-addition">+};</span>
+<span class="hljs-addition">+export interface State {</span>
+<span class="hljs-addition">+    todos: Todo[]</span>
+<span class="hljs-addition">+}</span>
+<span class="hljs-addition">+interface Params {}</span>
+<span class="hljs-addition">+interface LocationState { name:string }</span>
+<span class="hljs-addition">+type Props = StateProps &amp; DispatchProps &amp; RouteComponentProps&lt;Params, StaticContext, LocationState&gt;;</span>
+class Todos extends React.Component&lt;Props,State&gt;{
+    addTodo = (todo:Todo) =&gt;{
+       this.props.addTodo(todo);
+    }
+    render() {
+        return (
+            &lt;div&gt;
+<span class="hljs-addition">+               &lt;p&gt;名称:{this.props.location.state.name}&lt;/p&gt;</span>
+                &lt;TodoInput addTodo={this.addTodo}/&gt;
+                &lt;ul style={ulStyle}&gt;
+                    {
+                        this.props.list.map(todo=&gt;&lt;TodoItem key={todo.id} todo={todo}/&gt;)
+                    }
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        )
+    }
+}
+let mapStateToProps = function (state: CombinedState): TodosState {
+    return state.todos;
+}
+export default connect(mapStateToProps, actions)(Todos);
+</code></pre>
+<h2 id="t7615. connected-react-router">15. connected-react-router <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t7615.%20connected-react-router"> # </a></h2>
+<h3 id="t7715.1 src\history.tsx">15.1 src\history.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t7715.1%20src\history.tsx"> # </a></h3>
+<p>src\history.tsx</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { createBrowserHistory } <span class="hljs-keyword">from</span> <span class="hljs-string">'history'</span>
+<span class="hljs-keyword">const</span> history = createBrowserHistory()
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> history;
+</code></pre>
+<h3 id="t7815.2 src\index.tsx">15.2 src\index.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t7815.2%20src\index.tsx"> # </a></h3>
+<p>src\index.tsx</p>
+<pre><code class="lang-diff">import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import Counter from './components/Counter';
+import Todos from './components/Todos';
+import { Provider } from 'react-redux';
+import store from './store';
+import {Route, Link } from 'react-router-dom';
+<span class="hljs-addition">+import history from '@/history';</span>
+<span class="hljs-addition">+import {ConnectedRouter} from 'connected-react-router';</span>
+ReactDOM.render((
+    &lt;Provider store={store}&gt;
+<span class="hljs-addition">+        &lt;ConnectedRouter history={history} &gt;</span>
+            &lt;React.Fragment&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;Link to="/counter/counterName"&gt;counter&lt;/Link&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;Link to={{ pathname: "/todos", state: { name: 'todoName' } }}&gt;todos&lt;/Link&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;Route path="/counter/:name" component={Counter} /&gt;
+                &lt;Route path="/todos" component={Todos} /&gt;
+            &lt;/React.Fragment&gt;
+<span class="hljs-addition">+        &lt;/ConnectedRouter&gt;</span>
+    &lt;/Provider&gt;
+), document.getElementById('root'));
+</code></pre>
+<h3 id="t7915.3 store\index.tsx">15.3 store\index.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t7915.3%20store\index.tsx"> # </a></h3>
+<p>src\store\index.tsx</p>
+<pre><code class="lang-diff">import { createStore, applyMiddleware } from 'redux'
+<span class="hljs-addition">+import combinedReducer from './reducers';</span>
+<span class="hljs-addition">+import { routerMiddleware } from 'connected-react-router';</span>
+<span class="hljs-addition">+import history from '@/history';</span>
+
+<span class="hljs-addition">+let store =applyMiddleware(routerMiddleware(history))(createStore)(combinedReducer);</span>
+export default store;
+</code></pre>
+<h3 id="t8015.4 reducers\index.tsx">15.4 reducers\index.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t8015.4%20reducers\index.tsx"> # </a></h3>
+<p>src\store\reducers\index.tsx</p>
+<pre><code class="lang-diff">import counter, { CounterState} from './counter';
+import todos,{TodosState} from './todos';
+import { combineReducers } from 'redux';
+<span class="hljs-addition">+import history from '@/history';</span>
+<span class="hljs-addition">+import { connectRouter } from 'connected-react-router'</span>
+let reducers = {
+    counter,
+    todos,
+<span class="hljs-addition">+    router: connectRouter(history)</span>
+};
+type ReducersType = typeof reducers;
+type CombinedState = {
+    [key in keyof ReducersType]: ReturnType&lt;ReducersType[key]&gt;
+}
+export { CombinedState, CounterState, TodosState}
+
+let combinedReducer = combineReducers(reducers);
+export default combinedReducer;
+</code></pre>
+<h3 id="t8115.5 actions\counter.tsx">15.5 actions\counter.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t8115.5%20actions\counter.tsx"> # </a></h3>
+<p>src\store\actions\counter.tsx</p>
+<pre><code class="lang-diff">import { ADD, MINUS } from '../action-types';
+<span class="hljs-addition">+import { push, CallHistoryMethodAction } from 'connected-react-router';</span>
+<span class="hljs-addition">+import { LocationDescriptorObject,Path} from 'history';</span>
+<span class="hljs-addition">+import { TodosLocationState} from '@/components/Todos';</span>
+export interface AddAction {
+    type: typeof ADD
+}
+export interface MinusAction {
+    type: typeof MINUS
+}
+export function add(): AddAction {
+    return { type: ADD };
+}
+export function minus(): MinusAction {
+    return { type: MINUS };
+}
+<span class="hljs-addition">+export function go(path: LocationDescriptorObject&lt;TodosLocationState&gt;): CallHistoryMethodAction {</span>
+<span class="hljs-addition">+    return push(path);</span>
+<span class="hljs-addition">+}</span>
+</code></pre>
+<h3 id="t8215.6 actions\index.tsx">15.6 actions\index.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t8215.6%20actions\index.tsx"> # </a></h3>
+<p>src\store\actions\index.tsx</p>
+<pre><code class="lang-diff">import { AddAction,MinusAction} from './counter';
+import { AddTodoAction } from './todos';
+<span class="hljs-addition">+import { CallHistoryMethodAction } from 'connected-react-router';</span>
+<span class="hljs-addition">+export type Action = AddAction | MinusAction | AddTodoAction | CallHistoryMethodAction;</span>
+</code></pre>
+<h3 id="t8315.7 Counter.tsx">15.7 Counter.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t8315.7%20Counter.tsx"> # </a></h3>
+<p>src\components\Counter.tsx</p>
+<pre><code class="lang-diff">import * as React from 'react';
+import { connect } from 'react-redux';
+import { CombinedState, CounterState } from '../store/reducers';
+import * as actions from '@/store/actions/counter';
+import { RouteComponentProps } from 'react-router-dom';
+<span class="hljs-addition">+import { StaticContext} from 'react-router';</span>
+<span class="hljs-addition">+import { LocationDescriptorObject} from 'history';</span>
+<span class="hljs-addition">+import { TodosLocationState } from '@/components/Todos';</span>
+<span class="hljs-addition">+type StateProps = ReturnType&lt;typeof mapStateToProps&gt;;</span>
+<span class="hljs-addition">+type DispatchProps = typeof actions;</span>
+<span class="hljs-addition">+interface Params { name:string}</span>
+<span class="hljs-addition">+interface CounterLocationState { }</span>
+<span class="hljs-addition">+type Props = StateProps &amp; DispatchProps &amp; RouteComponentProps&lt;Params, StaticContext, CounterLocationState&gt;;</span>
+class Counter extends React.Component&lt;Props&gt;{
+    render() {
+<span class="hljs-addition">+       const { name} = this.props.match.params;</span>
+        const { number } = this.props;
+<span class="hljs-addition">+        let path: LocationDescriptorObject&lt;TodosLocationState&gt; = { pathname: "/todos", state: { name: 'todoName' } };</span>
+        return (
+            &lt;div&gt;
+<span class="hljs-addition">+                &lt;p&gt;名称:{name}&lt;/p&gt;</span>
+                &lt;p&gt;{number}&lt;/p&gt;
+                &lt;button onClick={()=&gt;this.props.add()}&gt;+&lt;/button&gt;
+                &lt;button onClick={() =&gt; this.props.go(path)}&gt;/todos&lt;/button&gt;
+            &lt;/div&gt;
+        )
+    }
+}
+
+let mapStateToProps = function (state: CombinedState): CounterState {
+    return state.counter;
+}
+
+export default connect(mapStateToProps, actions)(Counter);
+</code></pre>
+<h3 id="t8415.8 Todos\index.tsx">15.8 Todos\index.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t8415.8%20Todos\index.tsx"> # </a></h3>
+<p>src\components\Todos\index.tsx</p>
+<pre><code class="lang-diff">import * as React from 'react';
+import TodoInput from './TodoInput';
+import TodoItem from './TodoItem';
+import { Todo} from '@/models';
+import { CombinedState, CounterState, TodosState } from '@/store/reducers';
+import { RouteComponentProps } from 'react-router-dom';
+import { StaticContext } from 'react-router';
+import * as actions from '@/store/actions/todos';
+import { connect } from 'react-redux';
+type StateProps = ReturnType&lt;typeof mapStateToProps&gt;;
+type DispatchProps = typeof actions;
+const ulStyle: React.CSSProperties = {
+    width: "100px"
+};
+export interface State {
+    todos: Todo[]
+}
+<span class="hljs-addition">+interface Params {}</span>
+<span class="hljs-addition">+export interface TodosLocationState { name: string }</span>
+<span class="hljs-addition">+type Props = StateProps &amp; DispatchProps &amp; RouteComponentProps&lt;Params, StaticContext, TodosLocationState&gt;;</span>
+class Todos extends React.Component&lt;Props,State&gt;{
+    addTodo = (todo:Todo) =&gt;{
+       this.props.addTodo(todo);
+    }
+    render() {
+        return (
+            &lt;div&gt;
+<span class="hljs-addition">+                &lt;p&gt;名称:{this.props.location.state.name}&lt;/p&gt;</span>
+                &lt;TodoInput addTodo={this.addTodo}/&gt;
+                &lt;ul style={ulStyle}&gt;
+                    {
+                        this.props.list.map(todo=&gt;&lt;TodoItem key={todo.id} todo={todo}/&gt;)
+                    }
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        )
+    }
+}
+let mapStateToProps = function (state: CombinedState): TodosState {
+    return state.todos;
+}
+export default connect(mapStateToProps, actions)(Todos);
+</code></pre>
+<h2 id="t8516. redux-thunk">16. redux-thunk <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t8516.%20redux-thunk"> # </a></h2>
+<h3 id="t8616.1 redux-thunk\index.tsx">16.1 redux-thunk\index.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t8616.1%20redux-thunk\index.tsx"> # </a></h3>
+<p>src\redux-thunk\index.tsx</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> {
+    Middleware,
+    Dispatch,
+    MiddlewareAPI,
+    Action
+} <span class="hljs-keyword">from</span> <span class="hljs-string">"redux"</span>;
+
+<span class="hljs-keyword">export</span> type ThunkAction&lt;R,S,E, A extends Action&gt; = (
+    dispatch: ThunkDispatch&lt;S,E, A&gt;,
+    <span class="hljs-attr">getState</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> S
+) =&gt; <span class="hljs-keyword">void</span>;
+<span class="hljs-keyword">export</span> interface ThunkDispatch&lt;S,E, A extends Action&gt; {
+    &lt;T extends A&gt;(action: T): T;
+    &lt;R&gt;(asyncAction: ThunkAction&lt;R,S, E, A&gt;): R;
+}
+type ThunkDispatched = ThunkDispatch&lt;{},undefined, Action&gt;;
+const thunk: Middleware&lt;
+    ThunkDispatched,
+    {},
+    ThunkDispatched
+&gt; = (api: MiddlewareAPI&lt;ThunkDispatched, {}&gt;) =&gt; (
+    next: Dispatch&lt;Action&gt;
+) =&gt; (action: Function | Action): any =&gt; {
+    if (typeof action === "function") {
+        return action(api.dispatch, api.getState);
+    }
+    return next(action);
+};
+export default thunk;
+</code></pre>
+<h3 id="t8716.2 store\index.tsx">16.2 store\index.tsx <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t8716.2%20store\index.tsx"> # </a></h3>
+<p>src\store\index.tsx</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> {
+    createStore,
+    applyMiddleware,
+    Action,
+    Store,
+    AnyAction,
+    StoreEnhancer,
+    StoreEnhancerStoreCreator
+} <span class="hljs-keyword">from</span> <span class="hljs-string">"redux"</span>;
+<span class="hljs-keyword">import</span> combinedReducer,{CombinedState} <span class="hljs-keyword">from</span> <span class="hljs-string">'./reducers'</span>;
+<span class="hljs-keyword">import</span> { routerMiddleware } <span class="hljs-keyword">from</span> <span class="hljs-string">'connected-react-router'</span>;
+<span class="hljs-keyword">import</span> history <span class="hljs-keyword">from</span> <span class="hljs-string">'@/history'</span>;
+<span class="hljs-comment">//import thunk, { ThunkAction, ThunkDispatch } from 'redux-thunk';</span>
+<span class="hljs-keyword">import</span> thunk, { ThunkAction, ThunkDispatch } <span class="hljs-keyword">from</span> <span class="hljs-string">'@/redux-thunk'</span>;
+interface Ext {
+    <span class="hljs-attr">dispatch</span>: ThunkDispatch&lt;CombinedState, <span class="hljs-literal">undefined</span>, AnyAction&gt;
+}
+interface StateExt{}
+<span class="hljs-keyword">let</span> storeEnhancer: StoreEnhancer = applyMiddleware(routerMiddleware(history),thunk);
+
+<span class="hljs-keyword">let</span> storeEnhancerStoreCreator: StoreEnhancerStoreCreator = storeEnhancer(createStore);
+<span class="hljs-keyword">let</span> store: Store&lt;CombinedState &amp; StateExt, AnyAction&gt; &amp; Ext = storeEnhancerStoreCreator(combinedReducer);
+<span class="hljs-keyword">let</span> thunkAction: ThunkAction&lt;<span class="hljs-keyword">void</span>,CombinedState, <span class="hljs-literal">undefined</span>, AnyAction&gt; = (
+    dispatch: ThunkDispatch&lt;CombinedState, <span class="hljs-literal">undefined</span>, AnyAction&gt;,
+    <span class="hljs-attr">getState</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> CombinedState
+): <span class="hljs-function"><span class="hljs-params">void</span> =&gt;</span> { }
+store.dispatch(thunkAction);
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> store;
+</code></pre>
+<h2 id="t88参考">参考 <a href="http://www.zhufengpeixun.com/grow/html/114.react+typescript.html#t88%E5%8F%82%E8%80%83"> # </a></h2>
+<ul>
+<li><a href="http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html">commit_message_change_log</a></li>
+</ul>
+
+        <div class="copyright">Powered by <a href="https://github.com/jaywcjlove/idoc" target="_blank">idoc</a>. Dependence <a href="https://nodejs.org/">Node.js</a> run.</div>
+    </div>
+    
+</div>
+
+<script src="./珠峰架构师成长计划_files/jquery.js.下载"></script>
+<script>
+
+
+$('.warpper .page-toc ul ul li a').on('click',function(){
+  $('.warpper .page-toc ul ul li a').removeClass('my-active')
+  $(this).addClass('my-active')
+})
+$('.logo').on('mouseenter',function(){
+  $('.nav').height('450px');
+})
+$('.nav').on('mouseleave',function(){
+  $('.nav').height('80px');
+})
+$('.logo').on('click',function(){
+  $('.nav').css('display','none');
+ $('.warpper').css('padding','0px');
+})
+  // if (!$('.understand-me').length) {
+  //   var bar = $(window).height() - $('.navbar ').height() - $('.page-toc').position().top;
+  //   var count = bar / 26 / 2;
+  //   var barHeight = $('.page-toc').outerHeight();
+  //   $('.page-toc li').eq(0).children('a').addClass('red');
+  //   var arr = [];
+  //   $("h1,h2,h3,h4,h5,h6").each(function () {
+  //     arr.push($(this).position().top);
+  //   });
+  //   var timer
+  //   function dark() {
+  //     clearTimeout(timer)
+  //      timer = setTimeout(function () {
+  //      var top = Math.abs($('.page-toc > ul').position().top);
+  //      var cur = $('.content').scrollTop();
+  //      for (var i = arr.length; i >= 0; i--) {
+  //        if (arr[i] <= cur) {
+  //          break;
+  //        }
+  //      }
+  //      if (i === -1) {
+  //        i = 0;
+  //      }
+  //      $('.page-toc li a').removeClass('red');
+  //      $('.page-toc li').eq(i).children('a').addClass('red');
+  //      let height = $('.page-toc li').eq(i).position().top-$('.page-toc').height(); // 如果当前的offset出去了 回到中间可好？
+  //      $('.page-toc').scrollTop(height+$('.page-toc').height()/2);
+  //    },200)
+  //   }
+
+  //   $('.content').on('scroll', dark);
+  // }
+</script>
+<style>
+
+    /* ::-webkit-scrollbar{width:14px;}
+    ::-webkit-scrollbar-track{background-color:transparent;}
+    ::-webkit-scrollbar-thumb{background-color:transparent;}
+    ::-webkit-scrollbar-thumb:hover {background-color:transparent}
+    ::-webkit-scrollbar-thumb:active {background-color:transparent} */
+
+    .page-toc > ul .red {
+        background: #f3f3f3;
+        z-index: 1;
+        border-left: 3px solid #009a61;
+        -webkit-transition: all .2s ease;
+        transition: all .2s ease;
+        color: #000
+    }
+
+
+
+
+
+</style>
+
+
+</body></html>

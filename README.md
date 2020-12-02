@@ -1,4 +1,4 @@
-CI
+CI react+ts+webpack搭建项目
 
 ```bash
 Error:
