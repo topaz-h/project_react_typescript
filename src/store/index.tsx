@@ -1,6 +1,7 @@
-import {createStore,applyMiddleware} from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import rootReducer from './reducers';
 import history from '@/utils/history';
-import {routerMiddleware} from 'connected-react-router';
-let store = applyMiddleware(routerMiddleware(history))(createStore)(rootReducer);
+import { routerMiddleware } from 'connected-react-router';
+
+const store = applyMiddleware(routerMiddleware(history))(createStore)(rootReducer);
 export default store;
