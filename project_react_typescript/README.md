@@ -15,3 +15,16 @@ ssh和https的区别
 /* background-image: url('<%= context.config.publicPath +"home_bg.png"%>'); */
 
 ```
+
+
+类型	含义
+feat	新增feature
+fix	修复bug
+docs	仅仅修改了文档，比如README、CHANGELOG、CONTRIBUTE等
+style	仅仅修改了空格、格式缩进、偏好等信息，不改变代码逻辑
+refactor	代码重构，没有新增功能或修复bug
+perf	优化相关，提升了性能和体验
+test	测试用例，包括单元测试和集成测试
+chore	改变构建流程，或者添加了依赖库和工具
+revert	回滚到上一个版本
+ci	CI 配置，脚本文件等更新
