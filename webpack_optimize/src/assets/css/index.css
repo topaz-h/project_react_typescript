@@ -1,0 +1,11 @@
+body{
+  background-color: green;
+  color:red;
+}
+#root{
+  color:red;
+}
+/* #other 是无用css */
+#other{
+  color:red;
+}

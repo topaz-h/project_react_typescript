@@ -82,3 +82,4 @@ purgecss-webpack-plugin单独提取CSS并清除用不到的CSS
 
 
 
+npx webpack --watch
