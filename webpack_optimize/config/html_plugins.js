@@ -3,6 +3,7 @@
  * 与多页面入口配置相同，读取pages文件夹下的对应的html后缀文件，然后放入数组中
  */
 const glob = require("glob");
+// https://www.npmjs.com/package/html-webpack-plugin
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 
